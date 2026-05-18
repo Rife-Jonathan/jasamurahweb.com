@@ -3,6 +3,6 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://jasamurahweb.com',
+  site: 'https://www.jasamurahweb.com',
   integrations: [mdx(), sitemap()],
 });

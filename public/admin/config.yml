@@ -2,7 +2,7 @@ backend:
   name: github
   repo: Rife-Jonathan/jasamurahweb.com
   branch: main
-  base_url: https://jasamurahweb.com
+  base_url: https://www.jasamurahweb.com
   auth_endpoint: oauth
 
 media_folder: 'public/uploads'

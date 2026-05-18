@@ -1,0 +1,2 @@
+# Redirect non-www ke www (301 permanent)
+https://jasamurahweb.com/* https://www.jasamurahweb.com/:splat 301
