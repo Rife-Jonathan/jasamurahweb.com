@@ -1,67 +1,70 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Rife-Jonathan/jasamurahweb.com
   branch: main
+  base_url: https://jasamurahweb.com
+  auth_endpoint: oauth
 
-media_folder: "public/uploads"
-public_folder: "/uploads"
+media_folder: 'public/uploads'
+public_folder: '/uploads'
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/content/blog"
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'src/content/blog'
     create: true
-    slug: "{{slug}}"
+    slug: '{{slug}}'
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string" }
-      - { label: "Publish Date", name: "pubDate", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Author", name: "author", widget: "string", default: "Tim jasamurahweb.com" }
-      - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
-  - name: "services"
-    label: "Layanan"
-    folder: "src/content/services"
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'Publish Date', name: 'pubDate', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Author', name: 'author', widget: 'string', default: 'Tim jasamurahweb.com' }
+      - { label: 'Hero Image', name: 'heroImage', widget: 'image', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'services'
+    label: 'Layanan'
+    folder: 'src/content/services'
     create: true
-    slug: "{{slug}}"
+    slug: '{{slug}}'
     fields:
-      - { label: "Judul Layanan", name: "title", widget: "string" }
-      - { label: "Meta Description", name: "description", widget: "text" }
-      - { label: "Headline Halaman", name: "headline", widget: "string" }
-      - { label: "Label Pembuka", name: "eyebrow", widget: "string" }
-      - { label: "Kondisi Klien Saat Ini", name: "problemStatement", widget: "text" }
-      - { label: "Judul Tantangan", name: "challengeHeading", widget: "string" }
-      - label: "Hambatan Utama"
-        name: "frictionPoints"
-        widget: "list"
-        field: { label: "Hambatan", name: "friction", widget: "string" }
-      - { label: "Judul Cara Membantu", name: "solutionHeading", widget: "string" }
-      - label: "Daftar Fitur dan Benefit"
-        name: "featuresList"
-        widget: "list"
-        field: { label: "Benefit", name: "feature", widget: "string" }
-      - { label: "Judul Bukti Performa", name: "proofHeading", widget: "string" }
-      - label: "Bukti Performa"
-        name: "proofItems"
-        widget: "list"
+      - { label: 'Judul Layanan', name: 'title', widget: 'string' }
+      - { label: 'Meta Description', name: 'description', widget: 'text' }
+      - { label: 'Headline Halaman', name: 'headline', widget: 'string' }
+      - { label: 'Label Pembuka', name: 'eyebrow', widget: 'string' }
+      - { label: 'Kondisi Klien Saat Ini', name: 'problemStatement', widget: 'text' }
+      - { label: 'Judul Tantangan', name: 'challengeHeading', widget: 'string' }
+      - label: 'Hambatan Utama'
+        name: 'frictionPoints'
+        widget: 'list'
+        field: { label: 'Hambatan', name: 'friction', widget: 'string' }
+      - { label: 'Judul Cara Membantu', name: 'solutionHeading', widget: 'string' }
+      - label: 'Daftar Fitur dan Benefit'
+        name: 'featuresList'
+        widget: 'list'
+        field: { label: 'Benefit', name: 'feature', widget: 'string' }
+      - { label: 'Judul Bukti Performa', name: 'proofHeading', widget: 'string' }
+      - label: 'Bukti Performa'
+        name: 'proofItems'
+        widget: 'list'
         fields:
-          - { label: "Judul", name: "title", widget: "string" }
-          - { label: "Angka Utama", name: "metric", widget: "string" }
-          - { label: "Deskripsi", name: "description", widget: "text" }
-      - { label: "Judul Proses", name: "processHeading", widget: "string" }
-      - label: "Langkah Proses"
-        name: "processItems"
-        widget: "list"
+          - { label: 'Judul', name: 'title', widget: 'string' }
+          - { label: 'Angka Utama', name: 'metric', widget: 'string' }
+          - { label: 'Deskripsi', name: 'description', widget: 'text' }
+      - { label: 'Judul Proses', name: 'processHeading', widget: 'string' }
+      - label: 'Langkah Proses'
+        name: 'processItems'
+        widget: 'list'
         fields:
-          - { label: "Nomor", name: "step", widget: "string" }
-          - { label: "Judul", name: "title", widget: "string" }
-          - { label: "Deskripsi", name: "description", widget: "text" }
-      - label: "Pertanyaan Umum"
-        name: "faqItems"
-        widget: "list"
+          - { label: 'Nomor', name: 'step', widget: 'string' }
+          - { label: 'Judul', name: 'title', widget: 'string' }
+          - { label: 'Deskripsi', name: 'description', widget: 'text' }
+      - label: 'Pertanyaan Umum'
+        name: 'faqItems'
+        widget: 'list'
         fields:
-          - { label: "Pertanyaan", name: "question", widget: "string" }
-          - { label: "Jawaban", name: "answer", widget: "text" }
-      - { label: "Judul CTA", name: "ctaHeading", widget: "string" }
-      - { label: "Teks CTA", name: "ctaText", widget: "text" }
-      - { label: "Isi Halaman", name: "body", widget: "markdown", required: false }
+          - { label: 'Pertanyaan', name: 'question', widget: 'string' }
+          - { label: 'Jawaban', name: 'answer', widget: 'text' }
+      - { label: 'Judul CTA', name: 'ctaHeading', widget: 'string' }
+      - { label: 'Teks CTA', name: 'ctaText', widget: 'text' }
+      - { label: 'Isi Halaman', name: 'body', widget: 'markdown', required: false }
