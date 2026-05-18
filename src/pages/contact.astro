@@ -1,0 +1,124 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Button from '@components/Button.astro';
+import { contact, serviceOptions } from '@data/site';
+---
+
+<BaseLayout
+  title="Kontak & Briefing | jasamurahweb.com Yogyakarta"
+  description="Kirim brief proyek website, aplikasi, company profile, konten sosial media, atau iklan digital ke tim jasamurahweb.com di Yogyakarta."
+  ogImage="/contact_visual_blue.png"
+>
+  <section class="bg-white dark:bg-zinc-950 py-20">
+    <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_0.7fr] lg:px-8">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Konsultasi proyek</p>
+        <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-6xl">Ceritakan target bisnis Anda. Kami bantu susun langkah digitalnya.</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">Isi briefing singkat di bawah. Semakin jelas konteks yang Anda berikan, semakin tajam rekomendasi awal yang bisa kami siapkan.</p>
+
+        <form class="mt-10 grid gap-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 p-6 shadow-[0_18px_60px_rgba(0,82,204,0.10)] dark:shadow-none" name="project-brief" data-wa-form data-wa-number={contact.whatsappNumber}>
+          <input type="hidden" name="form-name" value="project-brief" />
+          <div class="grid gap-5 md:grid-cols-2">
+            <label class="block">
+              <span class="text-sm font-semibold text-zinc-800 dark:text-zinc-200">Nama</span>
+              <input class="mt-2 w-full rounded-xl border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white focus:border-brand focus:ring-brand" type="text" name="name" required />
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold text-zinc-800 dark:text-zinc-200">Email</span>
+              <input class="mt-2 w-full rounded-xl border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white focus:border-brand focus:ring-brand" type="email" name="email" required />
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold text-zinc-800 dark:text-zinc-200">Nomor WhatsApp</span>
+              <input class="mt-2 w-full rounded-xl border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white focus:border-brand focus:ring-brand" type="tel" name="phone" required />
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold text-zinc-800 dark:text-zinc-200">Nama Perusahaan</span>
+              <input class="mt-2 w-full rounded-xl border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white focus:border-brand focus:ring-brand" type="text" name="company" />
+            </label>
+          </div>
+          <div class="grid gap-5 md:grid-cols-2">
+            <label class="block">
+              <span class="text-sm font-semibold text-zinc-800 dark:text-zinc-200">Layanan yang Dibutuhkan</span>
+              <select class="mt-2 w-full rounded-xl border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white focus:border-brand focus:ring-brand" name="service" required>
+                <option value="">Pilih layanan</option>
+                {serviceOptions.map((option) => <option value={option}>{option}</option>)}
+              </select>
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold text-zinc-800 dark:text-zinc-200">Estimasi Budget</span>
+              <select class="mt-2 w-full rounded-xl border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white focus:border-brand focus:ring-brand" name="budget" required>
+                <option value="">Pilih range</option>
+                <option>Di bawah Rp5 juta</option>
+                <option>Rp5 juta - Rp15 juta</option>
+                <option>Rp15 juta - Rp50 juta</option>
+                <option>Di atas Rp50 juta</option>
+              </select>
+            </label>
+          </div>
+          <label class="block">
+            <span class="text-sm font-semibold text-zinc-800 dark:text-zinc-200">Brief Proyek</span>
+            <textarea class="mt-2 min-h-36 w-full rounded-xl border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white focus:border-brand focus:ring-brand placeholder:text-zinc-400 dark:placeholder:text-zinc-600" name="brief" placeholder="Ceritakan target, masalah saat ini, deadline, dan referensi jika ada." required></textarea>
+          </label>
+          <div>
+            <Button>Kirim Brief</Button>
+          </div>
+        </form>
+      </div>
+
+      <aside class="flex flex-col gap-8">
+        <div class="relative flex justify-center">
+          <div class="absolute -inset-4 rounded-[3rem] bg-brand-50/80 dark:bg-brand-900/20 blur-2xl"></div>
+          <img
+            src="/contact_visual_blue.png"
+            alt="Customer Support jasamurahweb.com"
+            width="600"
+            height="450"
+            loading="lazy"
+            class="relative w-full max-w-sm rounded-2xl object-contain drop-shadow-2xl shadow-blue-900/20 dark:shadow-black/50"
+            style="animation: float 6s ease-in-out infinite;"
+          />
+        </div>
+        <div class="h-fit rounded-xl border border-blue-100 bg-brand-50 p-6 text-zinc-950 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white">
+          <h2 class="text-2xl font-bold tracking-tight">Kanal prioritas</h2>
+        <p class="mt-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">Untuk kebutuhan cepat, hubungi WhatsApp dan sertakan layanan yang Anda butuhkan agar tim dapat memberi arahan awal.</p>
+        <div class="mt-6 space-y-4 text-sm">
+          <a class="block rounded-xl bg-white dark:bg-zinc-900 p-4 font-semibold text-brand dark:text-blue-300 shadow-sm" href={`https://wa.me/${contact.whatsappNumber}`}>WhatsApp: {contact.whatsappDisplay}</a>
+          <a class="block rounded-xl border border-blue-100 bg-white p-4 text-zinc-700 dark:border-white/10 dark:bg-transparent dark:text-zinc-200" href={`mailto:${contact.email}`}>{contact.email}</a>
+          <div class="rounded-xl border border-blue-100 bg-white p-4 text-zinc-700 dark:border-white/10 dark:bg-transparent dark:text-zinc-300">{contact.address}</div>
+        </div>
+        <div class="mt-8 border-t border-blue-100 pt-6 dark:border-white/10">
+          <p class="text-sm font-semibold text-zinc-950 dark:text-white">Jam respons</p>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Senin-Jumat, 09.00-18.00 WIB. Brief yang masuk di luar jam kerja akan ditinjau pada hari kerja berikutnya.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.querySelector('[data-wa-form]');
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const currentForm = event.currentTarget;
+    if (!(currentForm instanceof HTMLFormElement)) return;
+
+    const formData = new FormData(currentForm);
+    const number = currentForm.dataset.waNumber;
+    const message = [
+      'Halo jasamurahweb.com, saya ingin konsultasi project.',
+      '',
+      `Nama: ${formData.get('name')}`,
+      `Email: ${formData.get('email')}`,
+      `Telepon: ${formData.get('phone')}`,
+      `Perusahaan: ${formData.get('company') || '-'}`,
+      `Layanan: ${formData.get('service')}`,
+      `Budget: ${formData.get('budget')}`,
+      '',
+      `Brief: ${formData.get('brief')}`,
+    ].join('\n');
+
+    window.location.href = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+  });
+</script>

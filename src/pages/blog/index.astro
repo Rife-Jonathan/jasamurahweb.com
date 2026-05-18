@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Blog | jasamurahweb.com" description="Insight praktis tentang website, aplikasi, konten sosial media, SEO, dan iklan digital untuk pertumbuhan bisnis.">
+  <section class="bg-white dark:bg-zinc-950 py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Insights</p>
+        <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-6xl">Artikel praktis untuk mengambil keputusan digital yang lebih tajam.</h1>
+      </div>
+      <div class="mt-12 grid gap-6 md:grid-cols-2">
+        {posts.map((post) => (
+          <article class="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand/40 hover:shadow-[0_18px_60px_rgba(0,82,204,0.16)] dark:hover:shadow-[0_18px_60px_rgba(0,82,204,0.1)]">
+            <p class="text-sm text-zinc-500 dark:text-zinc-400">{post.data.pubDate.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })} · {Math.max(1, Math.ceil((post.body ?? '').length / 900))} menit baca</p>
+            <h2 class="mt-3 text-2xl font-bold tracking-tight text-zinc-950 dark:text-white"><a href={`/blog/${post.data.slug}/`}>{post.data.title}</a></h2>
+            <p class="mt-3 leading-relaxed text-zinc-600 dark:text-zinc-400">{post.data.description}</p>
+            <a class="mt-6 inline-flex font-semibold text-brand" href={`/blog/${post.data.slug}/`}>Baca artikel -&gt;</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

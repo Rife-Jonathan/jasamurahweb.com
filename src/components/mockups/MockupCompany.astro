@@ -1,0 +1,41 @@
+---
+const { issueHighlights } = Astro.props;
+---
+<div class="relative flex items-center justify-center lg:justify-end">
+  <div class="pointer-events-none absolute -right-14 -top-14 h-64 w-64 rounded-full bg-slate-500/20 blur-3xl"></div>
+  <div class="pointer-events-none absolute -bottom-16 -left-10 h-56 w-56 rounded-full bg-blue-400/20 blur-3xl"></div>
+  
+  {/* Floating Badges */}
+  <div class="service-float absolute -left-6 bottom-24 z-20 hidden rounded-2xl bg-slate-800 px-4 py-3 shadow-xl sm:block">
+    <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-300">Trust Score</p>
+    <p class="mt-1 flex items-baseline gap-1 text-2xl font-extrabold text-white">A<span class="text-sm font-bold text-slate-400">+</span></p>
+  </div>
+  
+  {/* Clean Profile Frame */}
+  <div class="relative z-10 w-full max-w-md overflow-hidden rounded-2xl border border-zinc-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-[0_30px_80px_rgba(0,0,0,0.12)]">
+    <div class="h-24 w-full bg-gradient-to-r from-slate-100 to-slate-200 dark:from-zinc-800 dark:to-zinc-900 relative">
+      <div class="absolute -bottom-8 left-6 h-16 w-16 rounded-xl border-4 border-white dark:border-zinc-950 bg-white dark:bg-zinc-900 shadow-sm flex items-center justify-center">
+         <div class="h-8 w-8 rounded-full bg-slate-200 dark:bg-zinc-800"></div>
+      </div>
+    </div>
+    
+    <div class="p-6 pt-12">
+      <div class="mb-6">
+        <div class="h-6 w-40 rounded bg-zinc-800 dark:bg-zinc-200 mb-2"></div>
+        <div class="h-3 w-64 rounded bg-zinc-400 dark:bg-zinc-600"></div>
+      </div>
+      
+      <div class="space-y-4">
+        {issueHighlights && issueHighlights.slice(0, 3).map((item: any, idx: number) => (
+          <div class="mockup-item" style={`animation-delay: ${0.4 + idx * 0.2}s; opacity: 0; animation-fill-mode: forwards;`}>
+            <div class="h-3 w-20 rounded bg-zinc-300 dark:bg-zinc-600 mb-2"></div>
+            <div class="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 p-3">
+              <div class="h-3 w-full rounded bg-zinc-700 dark:bg-zinc-300 mb-2"></div>
+              <div class="h-3 w-2/3 rounded bg-zinc-300 dark:bg-zinc-600"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>

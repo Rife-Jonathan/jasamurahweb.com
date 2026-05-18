@@ -1,0 +1,33 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Button from '@components/Button.astro';
+import ServiceCard from '@components/ServiceCard.astro';
+import { services, contact } from '@data/site';
+import MockupGeneric from '@components/mockups/MockupGeneric.astro';
+
+const briefMessage = `Halo tim jasamurahweb, saya tertarik dan ingin konsultasi mengenai layanan digital yang ada di jasamurahweb.com.`;
+const briefHref = `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(briefMessage)}`;
+---
+
+<BaseLayout title="Layanan Digital di Yogyakarta | jasamurahweb.com" description="Lihat layanan jasamurahweb.com untuk website, aplikasi, company profile, konten sosial media, dan iklan digital bagi bisnis di Yogyakarta dan Indonesia.">
+  <section class="bg-white dark:bg-zinc-950 py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-[1fr_0.8fr]">
+        <div class="max-w-3xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Layanan jasamurahweb.com</p>
+          <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-6xl">Layanan digital untuk bisnis yang ingin terlihat profesional dan tumbuh lebih terukur.</h1>
+          <p class="mt-6 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">Pilih layanan yang paling dekat dengan kebutuhan bisnis Anda: website cepat, aplikasi custom, company profile, konten sosial media, atau iklan Meta dan Google. Setiap layanan bisa berdiri sendiri atau digabung menjadi sistem pertumbuhan yang saling terhubung.</p>
+          <div class="mt-8">
+            <Button href={briefHref}>Ajukan Brief</Button>
+          </div>
+        </div>
+        <aside class="relative mt-12 lg:mt-0 flex items-center justify-center lg:justify-end">
+          <MockupGeneric />
+        </aside>
+      </div>
+      <div class="mt-20 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {services.map((service) => <ServiceCard {...service} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

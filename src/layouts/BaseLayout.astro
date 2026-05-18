@@ -1,0 +1,83 @@
+---
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import FloatingWhatsapp from '@components/FloatingWhatsapp.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  /** URL gambar untuk Open Graph (opsional, default ke gambar site) */
+  ogImage?: string;
+  /** URL canonical eksplisit (opsional, default ke URL halaman saat ini) */
+  canonicalUrl?: string;
+}
+
+const {
+  title,
+  description,
+  ogImage = '/home_visual_blue.png',
+  canonicalUrl,
+} = Astro.props;
+
+const siteUrl = 'https://jasamurahweb.com';
+const currentUrl = canonicalUrl ?? new URL(Astro.url.pathname, siteUrl).href;
+const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Primary -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={currentUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageAbsolute} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="jasamurahweb.com" />
+    <meta property="og:locale" content="id_ID" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageAbsolute} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/icon.png" />
+
+    <!-- Preconnect untuk performa font (jika menggunakan Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Dark mode init (inline agar tidak flicker) -->
+    <script is:inline>
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  </head>
+  <body class="bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-200">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <FloatingWhatsapp />
+    <Footer />
+  </body>
+</html>
+

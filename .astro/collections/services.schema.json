@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "headline": {
+      "type": "string"
+    },
+    "eyebrow": {
+      "type": "string"
+    },
+    "problemStatement": {
+      "type": "string"
+    },
+    "challengeHeading": {
+      "type": "string"
+    },
+    "frictionPoints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "solutionHeading": {
+      "type": "string"
+    },
+    "featuresList": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "proofHeading": {
+      "type": "string"
+    },
+    "proofItems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "metric": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "metric",
+          "description"
+        ]
+      }
+    },
+    "processHeading": {
+      "type": "string"
+    },
+    "processItems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "step",
+          "title",
+          "description"
+        ]
+      }
+    },
+    "faqItems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "answer": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "question",
+          "answer"
+        ]
+      }
+    },
+    "ctaHeading": {
+      "type": "string"
+    },
+    "ctaText": {
+      "type": "string"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "headline",
+    "eyebrow",
+    "problemStatement",
+    "challengeHeading",
+    "frictionPoints",
+    "solutionHeading",
+    "featuresList",
+    "proofHeading",
+    "proofItems",
+    "processHeading",
+    "processItems",
+    "faqItems",
+    "ctaHeading",
+    "ctaText"
+  ]
+}
