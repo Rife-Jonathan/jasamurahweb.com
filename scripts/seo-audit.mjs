@@ -8,8 +8,27 @@ const exists = (file) => fs.existsSync(path.join(root, file));
 
 const homeHtml = read('dist/index.html');
 const servicesHtml = read('dist/services/index.html');
+const websiteServiceHtml = read('dist/jasa-pembuatan-website/index.html');
+const jakartaCityHtml = read('dist/jasa-pembuatan-website-jakarta/index.html');
 const sitemap = read('dist/sitemap-0.xml');
 const config = read('astro.config.mjs');
+const redirects = read('public/_redirects');
+
+const serviceSlugs = [
+  'jasa-pembuatan-website',
+  'jasa-aplikasi-web-dan-android',
+  'jasa-pembuatan-company-profile',
+  'jasa-pembuatan-konten-sosmed',
+  'jasa-iklan-di-meta-dan-google',
+];
+
+const citySlugs = [
+  'jakarta', 'surabaya', 'bandung', 'medan', 'semarang', 'makassar', 'palembang',
+  'denpasar', 'yogyakarta', 'tangerang', 'tangerang-selatan', 'bekasi', 'depok',
+  'bogor', 'malang', 'batam', 'pekanbaru', 'balikpapan', 'samarinda', 'banjarmasin',
+  'solo', 'cirebon', 'sidoarjo', 'gresik', 'padang', 'bandar-lampung', 'pontianak',
+  'manado', 'mataram', 'jayapura',
+];
 
 assert.match(config, /site:\s*['"]https:\/\/www\.jasamurahweb\.com['"]/, 'Astro site must use www canonical domain');
 assert.match(config, /trailingSlash:\s*['"]always['"]/, 'Astro config must enforce trailingSlash always');
@@ -25,6 +44,30 @@ assert.doesNotMatch(homeHtml, /https:\/\/jasamurahweb\.com/, 'Homepage must not 
 
 assert.match(servicesHtml, /<h2[^>]*>Pilih layanan digital sesuai kebutuhan bisnis Anda<\/h2>/, 'Services index must include an H2 before service cards');
 assert.match(servicesHtml, /<meta name="robots" content="index, follow"\s*\/?\s*>/, 'Services page robots meta must be explicit');
+
+for (const slug of serviceSlugs) {
+  assert.ok(exists(`dist/${slug}/index.html`), `Root service URL must exist: /${slug}/`);
+  assert.ok(!exists(`dist/services/${slug}/index.html`), `Old nested service URL must not be generated: /services/${slug}/`);
+  assert.match(sitemap, new RegExp(`https:\\/\\/www\\.jasamurahweb\\.com\\/${slug}\\/`), `Sitemap must include root service URL: /${slug}/`);
+  assert.doesNotMatch(sitemap, new RegExp(`https:\\/\\/www\\.jasamurahweb\\.com\\/services\\/${slug}\\/`), `Sitemap must exclude old service URL: /services/${slug}/`);
+  assert.match(redirects, new RegExp(`/services/${slug}/\\s+/${slug}/\\s+301`), `Redirect must exist from /services/${slug}/ to /${slug}/`);
+}
+
+for (const city of citySlugs) {
+  const slug = `jasa-pembuatan-website-${city}`;
+  assert.ok(exists(`dist/${slug}/index.html`), `City SEO page must exist: /${slug}/`);
+  assert.match(sitemap, new RegExp(`https:\\/\\/www\\.jasamurahweb\\.com\\/${slug}\\/`), `Sitemap must include city page: /${slug}/`);
+}
+
+assert.match(websiteServiceHtml, /<link rel="canonical" href="https:\/\/www\.jasamurahweb\.com\/jasa-pembuatan-website\/"\s*\/?\s*>/, 'Website service canonical must use root URL');
+assert.match(websiteServiceHtml, /"@type":"Service"/, 'Website service page must include Service schema');
+assert.doesNotMatch(websiteServiceHtml, /https:\/\/www\.jasamurahweb\.com\/services\/jasa-pembuatan-website\//, 'Website service page must not reference old nested canonical URL');
+
+assert.match(jakartaCityHtml, /<h1[^>]*>Jasa Pembuatan Website Jakarta untuk Bisnis yang Ingin Tampil Profesional<\/h1>/, 'Jakarta city page must have city-focused H1');
+assert.match(jakartaCityHtml, /<link rel="canonical" href="https:\/\/www\.jasamurahweb\.com\/jasa-pembuatan-website-jakarta\/"\s*\/?\s*>/, 'Jakarta city page canonical must be self-referencing');
+assert.match(jakartaCityHtml, /"@type":"FAQPage"/, 'City pages must include FAQ schema');
+assert.match(jakartaCityHtml, /"@type":"Service"/, 'City pages must include Service schema');
+assert.match(jakartaCityHtml, /href="\/jasa-pembuatan-website\/"/, 'City pages must internally link to main website service page');
 
 assert.match(sitemap, /https:\/\/www\.jasamurahweb\.com\//, 'Sitemap URLs must use www domain');
 assert.doesNotMatch(sitemap, /https:\/\/jasamurahweb\.com\//, 'Sitemap must not contain non-www URLs');

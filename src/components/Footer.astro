@@ -1,5 +1,6 @@
 ---
 import { contact, services } from '@data/site';
+import { servicePath } from '@data/routes';
 ---
 
 <footer class="border-t border-zinc-200 bg-white text-zinc-950 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white">
@@ -31,7 +32,7 @@ import { contact, services } from '@data/site';
       <p class="text-sm font-semibold">Layanan</p>
       <ul class="mt-4 space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
         {services.map((service) => (
-          <li><a class="hover:text-brand dark:hover:text-white" href={`/services/${service.slug}/`}>{service.title}</a></li>
+          <li><a class="hover:text-brand dark:hover:text-white" href={servicePath(service.slug)}>{service.title}</a></li>
         ))}
       </ul>
     </div>

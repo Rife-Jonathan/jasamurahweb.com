@@ -1,2 +1,9 @@
 # Redirect non-www ke www (301 permanent)
 https://jasamurahweb.com/* https://www.jasamurahweb.com/:splat 301
+
+# Redirect URL layanan lama ke URL root yang lebih SEO-friendly
+/services/jasa-pembuatan-website/ /jasa-pembuatan-website/ 301
+/services/jasa-aplikasi-web-dan-android/ /jasa-aplikasi-web-dan-android/ 301
+/services/jasa-pembuatan-company-profile/ /jasa-pembuatan-company-profile/ 301
+/services/jasa-pembuatan-konten-sosmed/ /jasa-pembuatan-konten-sosmed/ 301
+/services/jasa-iklan-di-meta-dan-google/ /jasa-iklan-di-meta-dan-google/ 301

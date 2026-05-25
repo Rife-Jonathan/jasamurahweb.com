@@ -1,0 +1,505 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Button from '@components/Button.astro';
+import FaqAccordion from '@components/FaqAccordion.astro';
+import { contact, services } from '@data/site';
+import { servicePath, servicesIndexPath } from '@data/routes';
+import { websiteCityPages } from '@data/websiteCities';
+
+import MockupWebsite from '@components/mockups/MockupWebsite.astro';
+import MockupApp from '@components/mockups/MockupApp.astro';
+import MockupMarketing from '@components/mockups/MockupMarketing.astro';
+import MockupSocial from '@components/mockups/MockupSocial.astro';
+import MockupCompany from '@components/mockups/MockupCompany.astro';
+import MockupGeneric from '@components/mockups/MockupGeneric.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('services');
+
+  return [
+    ...entries.map((entry) => ({
+      params: { slug: entry.id },
+      props: { pageType: 'service', serviceEntry: entry },
+    })),
+    ...websiteCityPages.map((cityPage) => ({
+      params: { slug: cityPage.slug },
+      props: { pageType: 'city', cityPage },
+    })),
+  ];
+}
+
+const { pageType, serviceEntry, cityPage } = Astro.props as any;
+const siteUrl = 'https://www.jasamurahweb.com';
+const isServicePage = pageType === 'service';
+const isCityPage = pageType === 'city';
+
+const renderedService = isServicePage ? await render(serviceEntry) : null;
+const Content = renderedService?.Content;
+
+const pageSlug = isServicePage ? serviceEntry.id : cityPage.slug;
+const pageUrl = `${siteUrl}/${pageSlug}/`;
+
+const briefMessage = isServicePage
+  ? `Halo tim jasamurahweb, saya ingin ajukan brief untuk layanan ${serviceEntry.data.title}. Bisa bantu konsultasi langkah awalnya?`
+  : `Halo tim jasamurahweb, saya ingin konsultasi jasa pembuatan website untuk bisnis di ${cityPage.city}.`;
+const briefHref = `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(briefMessage)}`;
+
+const issueLevels = ['Kritis', 'Waspada', 'Prioritas'];
+const issueBarWidths = ['88%', '76%', '92%'];
+const issueHighlights = isServicePage
+  ? serviceEntry.data.frictionPoints.slice(0, 3).map((point: string, index: number) => ({
+      text: point.length > 86 ? `${point.slice(0, 83).trimEnd()}...` : point,
+      level: issueLevels[index] ?? 'Prioritas',
+      width: issueBarWidths[index] ?? '70%',
+      delay: `${0.15 * (index + 1)}s`,
+    }))
+  : [
+      { text: 'Website belum menjelaskan layanan dan bukti bisnis dengan jelas.', level: 'Kritis', width: '88%', delay: '0.15s' },
+      { text: 'Calon pelanggan sulit menemukan kontak dan CTA konsultasi.', level: 'Waspada', width: '76%', delay: '0.3s' },
+      { text: 'Konten belum siap mendukung SEO lokal dan iklan digital.', level: 'Prioritas', width: '92%', delay: '0.45s' },
+    ];
+
+const cityFaqItems = isCityPage
+  ? [
+      {
+        question: `Apakah jasamurahweb.com melayani jasa pembuatan website di ${cityPage.city}?`,
+        answer: `Ya. Kami melayani konsultasi dan pembuatan website untuk bisnis di ${cityPage.city} secara online, mulai dari perencanaan struktur halaman, desain, development, sampai website siap dipakai.`,
+      },
+      {
+        question: `Jenis website apa yang cocok untuk bisnis di ${cityPage.city}?`,
+        answer: `Untuk bisnis di ${cityPage.city}, website yang umum dibutuhkan antara lain company profile, landing page penjualan, katalog produk, website layanan profesional, dan website custom yang bisa dikembangkan menjadi aplikasi web.`,
+      },
+      {
+        question: 'Apakah website sudah SEO-ready?',
+        answer: 'Ya. Struktur dasar website disiapkan dengan heading yang jelas, meta title, meta description, internal link, konten yang mudah dibaca, CTA, dan performa halaman yang lebih siap untuk optimasi pencarian.',
+      },
+      {
+        question: 'Apakah bisa lanjut ke iklan Google Ads atau Meta Ads?',
+        answer: 'Bisa. Setelah website siap, halaman dapat dikembangkan menjadi landing page campaign dengan CTA, tracking, dan struktur konten yang mendukung iklan digital.',
+      },
+    ]
+  : [];
+
+const pageTitle = isServicePage
+  ? `${serviceEntry.data.title} | jasamurahweb.com`
+  : `Jasa Pembuatan Website ${cityPage.city} | jasamurahweb.com`;
+const pageDescription = isServicePage
+  ? serviceEntry.data.description
+  : `Jasa pembuatan website ${cityPage.city} untuk bisnis yang ingin tampil profesional, punya aset digital sendiri, dan siap meningkatkan kredibilitas online.`;
+const ogImage = isServicePage ? '/services_visual_blue.png' : '/og-image.png';
+
+const serviceSchema = isServicePage
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: serviceEntry.data.title,
+      description: serviceEntry.data.description,
+      url: pageUrl,
+      provider: {
+        '@type': 'LocalBusiness',
+        name: 'jasamurahweb.com',
+        url: siteUrl,
+        telephone: contact.whatsappDisplay,
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Sleman',
+          addressRegion: 'Yogyakarta',
+          addressCountry: 'ID',
+        },
+      },
+      areaServed: [
+        { '@type': 'City', name: 'Yogyakarta' },
+        { '@type': 'Country', name: 'Indonesia' },
+      ],
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: `Jasa Pembuatan Website ${cityPage.city}`,
+      description: pageDescription,
+      url: pageUrl,
+      serviceType: 'Jasa Pembuatan Website',
+      provider: {
+        '@type': 'LocalBusiness',
+        name: 'jasamurahweb.com',
+        url: siteUrl,
+        telephone: contact.whatsappDisplay,
+        email: contact.email,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Jl. Candi Gebang permai blok 6 no 2 Jetis, Wedomartani',
+          addressLocality: 'Sleman',
+          addressRegion: 'Yogyakarta',
+          addressCountry: 'ID',
+        },
+      },
+      areaServed: [
+        { '@type': 'City', name: cityPage.city },
+        { '@type': 'AdministrativeArea', name: cityPage.province },
+      ],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: `Paket website untuk bisnis di ${cityPage.city}`,
+        itemListElement: [
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Website Company Profile' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landing Page Penjualan' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Website Katalog Produk' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Website Custom dan Aplikasi Web' } },
+        ],
+      },
+    };
+
+const breadcrumbSchema = isServicePage
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+        { '@type': 'ListItem', position: 2, name: 'Layanan', item: `${siteUrl}${servicesIndexPath}` },
+        { '@type': 'ListItem', position: 3, name: serviceEntry.data.title, item: pageUrl },
+      ],
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+        { '@type': 'ListItem', position: 2, name: 'Jasa Pembuatan Website', item: `${siteUrl}/jasa-pembuatan-website/` },
+        { '@type': 'ListItem', position: 3, name: `Jasa Pembuatan Website ${cityPage.city}`, item: pageUrl },
+      ],
+    };
+
+const faqSchema = isCityPage
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: cityFaqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer,
+        },
+      })),
+    }
+  : null;
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  ogImage={ogImage}
+  canonicalUrl={pageUrl}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} is:inline />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} is:inline />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} is:inline />}
+
+  {isServicePage && (
+    <>
+      <section class="bg-white dark:bg-zinc-950 py-20">
+        <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_0.8fr] lg:px-8">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">{serviceEntry.data.eyebrow}</p>
+            <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-6xl">{serviceEntry.data.headline}</h1>
+            <p class="mt-6 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">{serviceEntry.data.description}</p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button href={briefHref}>Ajukan Brief</Button>
+              <Button href="#pertanyaan-umum" variant="secondary">Lihat Pertanyaan Umum</Button>
+            </div>
+          </div>
+          <aside class="relative flex items-center justify-center lg:justify-end">
+            {serviceEntry.id === 'jasa-pembuatan-website' && <MockupWebsite issueHighlights={issueHighlights} />}
+            {serviceEntry.id === 'jasa-aplikasi-web-dan-android' && <MockupApp issueHighlights={issueHighlights} />}
+            {serviceEntry.id === 'jasa-iklan-di-meta-dan-google' && <MockupMarketing issueHighlights={issueHighlights} />}
+            {serviceEntry.id === 'jasa-pembuatan-konten-sosmed' && <MockupSocial issueHighlights={issueHighlights} />}
+            {serviceEntry.id === 'jasa-pembuatan-company-profile' && <MockupCompany issueHighlights={issueHighlights} />}
+            {![
+              'jasa-pembuatan-website',
+              'jasa-aplikasi-web-dan-android',
+              'jasa-iklan-di-meta-dan-google',
+              'jasa-pembuatan-konten-sosmed',
+              'jasa-pembuatan-company-profile',
+            ].includes(serviceEntry.id) && <MockupGeneric />}
+          </aside>
+        </div>
+      </section>
+
+      <section class="border-y border-zinc-200 bg-brand-50 py-20 text-zinc-950 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="max-w-2xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand dark:text-blue-300">Biaya yang sering tidak terlihat</p>
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">{serviceEntry.data.challengeHeading}</h2>
+          </div>
+          <div class="mt-10 grid gap-5 md:grid-cols-3">
+            {serviceEntry.data.frictionPoints.map((item: string) => (
+              <div class="rounded-xl border border-blue-100 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
+                <p class="text-lg font-bold leading-relaxed">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white dark:bg-zinc-950 py-20">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1fr] lg:px-8">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Cara kami membantu</p>
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">{serviceEntry.data.solutionHeading}</h2>
+            <div class="prose prose-blue dark:prose-invert mt-6 max-w-none text-zinc-600 dark:text-zinc-400">
+              {Content && <Content />}
+            </div>
+          </div>
+          <div class="grid gap-4">
+            {serviceEntry.data.featuresList.map((feature: string) => (
+              <div class="flex gap-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 p-5 shadow-sm">
+                <span class="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand text-xs font-bold text-white">✓</span>
+                <p class="font-semibold leading-relaxed text-zinc-800 dark:text-zinc-200">{feature}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-brand-50 dark:bg-zinc-900/30 py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="max-w-2xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Bukti yang bisa diukur</p>
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">{serviceEntry.data.proofHeading}</h2>
+          </div>
+          <div class="mt-10 grid gap-5 md:grid-cols-3">
+            {serviceEntry.data.proofItems.map((item: any) => (
+              <article class="rounded-xl border border-blue-100 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 p-6">
+                <h3 class="text-xl font-bold text-zinc-950 dark:text-white">{item.title}</h3>
+                <p class="mt-5 text-sm leading-relaxed text-zinc-700 dark:text-zinc-400"><strong class="text-3xl text-zinc-950 dark:text-white">{item.metric}</strong> {item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white dark:bg-zinc-950 py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">{serviceEntry.data.processHeading}</h2>
+          <div class="mt-10 grid gap-5 md:grid-cols-3">
+            {serviceEntry.data.processItems.map((item: any) => (
+              <article class="border-l-2 border-brand pl-5">
+                <p class="text-sm font-bold text-brand">{item.step}</p>
+                <h3 class="mt-2 text-xl font-bold text-zinc-950 dark:text-white">{item.title}</h3>
+                <p class="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="pertanyaan-umum" class="bg-brand-50 dark:bg-zinc-900/30 py-20">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1fr] lg:px-8">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Sebelum bekerja sama</p>
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white">Pertanyaan yang sering diajukan.</h2>
+          </div>
+          <FaqAccordion items={serviceEntry.data.faqItems} />
+        </div>
+      </section>
+
+      <section class="bg-brand py-16 text-white">
+        <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-4 sm:px-6 md:flex-row md:items-center lg:px-8">
+          <div>
+            <h2 class="text-3xl font-extrabold tracking-tight">{serviceEntry.data.ctaHeading}</h2>
+            <p class="mt-3 max-w-2xl text-blue-100">{serviceEntry.data.ctaText}</p>
+          </div>
+          <Button href={briefHref} variant="light" class="shrink-0">Ajukan Brief</Button>
+        </div>
+      </section>
+    </>
+  )}
+
+  {isCityPage && (
+    <>
+      <section class="overflow-hidden bg-white dark:bg-zinc-950 py-20">
+        <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Jasa Pembuatan Website {cityPage.city}</p>
+            <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-6xl">Jasa Pembuatan Website {cityPage.city} untuk Bisnis yang Ingin Tampil Profesional</h1>
+            <p class="mt-6 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
+              jasamurahweb.com membantu bisnis di {cityPage.city} membangun website profesional yang rapi, cepat, mobile-friendly, SEO-ready, dan siap menjadi aset digital utama untuk meningkatkan kredibilitas serta penjualan online.
+            </p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button href={briefHref}>Konsultasi Website {cityPage.city}</Button>
+              <Button href="/jasa-pembuatan-website/" variant="secondary">Lihat Layanan Website</Button>
+            </div>
+            <p class="mt-6 text-sm font-medium text-zinc-700 dark:text-zinc-400">Area layanan: {cityPage.areaContext}.</p>
+          </div>
+          <aside class="relative flex items-center justify-center lg:justify-end">
+            <MockupWebsite issueHighlights={issueHighlights} />
+          </aside>
+        </div>
+      </section>
+
+      <section class="border-y border-zinc-200 bg-brand-50 py-20 dark:border-zinc-800 dark:bg-zinc-900/30">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1fr] lg:px-8">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Search intent lokal</p>
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">Website untuk bisnis {cityPage.city} harus jelas, kredibel, dan mudah menghasilkan kontak.</h2>
+          </div>
+          <div class="space-y-5 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+            <p>{cityPage.localAngle}</p>
+            <p>Halaman website disusun untuk menjawab kebutuhan calon pelanggan: siapa bisnis Anda, layanan apa yang ditawarkan, apa bukti kepercayaannya, bagaimana proses kerja, dan bagaimana cara menghubungi tim Anda.</p>
+            <p>Target utamanya adalah membantu {cityPage.businessContext} memiliki website yang tidak sekadar tampil online, tetapi juga siap mendukung SEO, konten sosial media, Google Ads, Meta Ads, dan aktivitas sales.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white dark:bg-zinc-950 py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Jenis website</p>
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">Pilihan website yang cocok untuk bisnis di {cityPage.city}</h2>
+            <p class="mt-4 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">Setiap bisnis punya kebutuhan berbeda. Kami bantu memilih struktur halaman yang paling masuk akal agar website lebih mudah dipahami dan dikembangkan.</p>
+          </div>
+          <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              ['Company Profile', 'Untuk menampilkan profil perusahaan, layanan, legalitas, portofolio, testimoni, dan kontak resmi.'],
+              ['Landing Page', 'Untuk campaign iklan, promosi layanan, launching produk, dan pengumpulan leads dari WhatsApp atau form.'],
+              ['Katalog Produk', 'Untuk menampilkan produk, kategori, detail penawaran, dan tombol kontak tanpa sistem checkout yang rumit.'],
+              ['Website Custom', 'Untuk kebutuhan dashboard, booking, membership, database, integrasi API, atau aplikasi web lanjutan.'],
+            ].map(([title, description]) => (
+              <article class="rounded-xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50">
+                <h3 class="text-xl font-bold text-zinc-950 dark:text-white">{title}</h3>
+                <p class="mt-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-brand-50 dark:bg-zinc-900/30 py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Struktur SEO</p>
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">Yang kami siapkan agar website lebih siap bersaing di pencarian lokal</h2>
+          </div>
+          <div class="mt-10 grid gap-5 md:grid-cols-3">
+            {[
+              ['Struktur halaman jelas', 'Hero, layanan, value proposition, proses kerja, bukti, FAQ, dan CTA disusun agar pengunjung tidak bingung.'],
+              ['Copywriting natural', 'Keyword lokal digunakan secara wajar tanpa stuffing, tetap profesional dan enak dibaca calon klien.'],
+              ['Internal linking', 'Website diarahkan ke layanan utama seperti website, aplikasi web, company profile, konten sosmed, dan iklan digital.'],
+              ['Schema markup', 'Service, FAQ, dan breadcrumb schema disiapkan untuk membantu mesin pencari memahami konteks halaman.'],
+              ['Mobile-friendly', 'Tampilan dan CTA dibuat nyaman untuk calon pelanggan yang membuka dari smartphone.'],
+              ['Siap growth channel', 'Website bisa dilanjutkan ke tracking, Google Ads, Meta Ads, konten sosial media, dan aplikasi web custom.'],
+            ].map(([title, description]) => (
+              <article class="rounded-xl border border-blue-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50">
+                <h3 class="text-xl font-bold text-zinc-950 dark:text-white">{title}</h3>
+                <p class="mt-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white dark:bg-zinc-950 py-20">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1fr] lg:px-8">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Layanan lanjutan</p>
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">Website bisa menjadi pusat pertumbuhan digital bisnis Anda.</h2>
+            <p class="mt-5 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">Setelah website aktif, bisnis bisa lanjut ke solusi digital lain agar brand lebih konsisten dan jalur akuisisi pelanggan lebih terukur.</p>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            {services.map((service) => (
+              <a href={servicePath(service.slug)} class="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-brand/40 dark:border-zinc-800 dark:bg-zinc-900/50">
+                <h3 class="font-bold text-zinc-950 dark:text-white">{service.title}</h3>
+                <p class="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{service.summary}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="pertanyaan-umum" class="bg-brand-50 dark:bg-zinc-900/30 py-20">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1fr] lg:px-8">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">FAQ SEO lokal</p>
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white">Pertanyaan tentang jasa pembuatan website {cityPage.city}</h2>
+          </div>
+          <FaqAccordion items={cityFaqItems} />
+        </div>
+      </section>
+
+      <section class="bg-brand py-16 text-white">
+        <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-4 sm:px-6 md:flex-row md:items-center lg:px-8">
+          <div>
+            <h2 class="text-3xl font-extrabold tracking-tight">Butuh website profesional untuk bisnis di {cityPage.city}?</h2>
+            <p class="mt-3 max-w-2xl text-blue-100">Ceritakan kebutuhan bisnis Anda. Kami bantu susun struktur website, copywriting, desain, dan CTA agar website siap menjadi aset digital yang mendukung kredibilitas serta penjualan online.</p>
+          </div>
+          <Button href={briefHref} variant="light" class="shrink-0">Konsultasi Gratis</Button>
+        </div>
+      </section>
+    </>
+  )}
+</BaseLayout>
+
+<style>
+  @keyframes service-bar-grow {
+    from {
+      width: 0;
+      opacity: 0.45;
+    }
+    to {
+      width: var(--bar-width);
+      opacity: 1;
+    }
+  }
+
+  @keyframes service-pulse-dot {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.45;
+      transform: scale(0.7);
+    }
+  }
+
+  @keyframes service-float-badge {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  .service-signal-bar {
+    width: var(--bar-width);
+    animation: service-bar-grow 0.9s ease-out both;
+    animation-delay: var(--bar-delay, 0s);
+  }
+
+  .service-live-dot {
+    animation: service-pulse-dot 1.6s ease-in-out infinite;
+  }
+
+  .service-float {
+    animation: service-float-badge 3.2s ease-in-out infinite;
+  }
+
+  @keyframes mockup-fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .mockup-item {
+    animation: mockup-fade-in-up 0.5s ease-out forwards;
+  }
+</style>

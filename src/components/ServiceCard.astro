@@ -6,6 +6,8 @@ interface Props {
   icon?: string;
 }
 
+import { servicePath } from '@data/routes';
+
 const { title, summary, slug } = Astro.props;
 ---
 
@@ -18,7 +20,7 @@ const { title, summary, slug } = Astro.props;
   </div>
   <h3 class="mt-5 text-xl font-bold tracking-tight text-zinc-950 dark:text-white">{title}</h3>
   <p class="mt-3 flex-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{summary}</p>
-  <a href={`/services/${slug}/`} class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand dark:text-blue-400">
+  <a href={servicePath(slug)} class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand dark:text-blue-400">
     Selengkapnya
     <span aria-hidden="true" class="transition group-hover:translate-x-1">-&gt;</span>
   </a>
