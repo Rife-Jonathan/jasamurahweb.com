@@ -1,0 +1,83 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Button from '@components/Button.astro';
+import ServiceAreasSection from '@components/ServiceAreasSection.astro';
+import { websiteCityPages } from '@data/websiteCities';
+import { contact } from '@data/site';
+
+const siteUrl = 'https://www.jasamurahweb.com';
+const pageUrl = `${siteUrl}/area-layanan/`;
+const briefMessage = 'Halo jasamurahweb.com, saya ingin konsultasi jasa pembuatan website untuk bisnis saya.';
+const briefHref = `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(briefMessage)}`;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'Area Layanan', item: pageUrl },
+  ],
+};
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Area layanan jasa pembuatan website jasamurahweb.com',
+  itemListElement: websiteCityPages.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: `Jasa Pembuatan Website ${item.city}`,
+    url: `${siteUrl}/${item.slug}/`,
+  })),
+};
+---
+
+<BaseLayout
+  title="Area Layanan Jasa Pembuatan Website | jasamurahweb.com"
+  description="Daftar area layanan jasa pembuatan website jasamurahweb.com untuk bisnis di berbagai kota Indonesia, termasuk Jogja, Jakarta, Surabaya, Bandung, dan kota lain."
+  ogImage="/og-image.png"
+  canonicalUrl={pageUrl}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} is:inline />
+  <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} is:inline />
+
+  <section class="overflow-hidden bg-brand-50 py-20 dark:bg-zinc-900/30">
+    <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Area Layanan</p>
+        <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-6xl">Jasa Pembuatan Website untuk Bisnis di Berbagai Kota</h1>
+        <p class="mt-6 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
+          jasamurahweb.com membantu bisnis membangun website profesional yang rapi, mobile-friendly, SEO-ready, dan siap menjadi aset digital utama. Pilih kota terdekat untuk melihat halaman layanan yang lebih relevan dengan kebutuhan pasar lokal.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <Button href={briefHref}>Konsultasi Website</Button>
+          <Button href="/jasa-pembuatan-website/" variant="secondary">Lihat Layanan Website</Button>
+        </div>
+      </div>
+      <div class="rounded-3xl border border-blue-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
+        <h2 class="text-2xl font-extrabold tracking-tight text-zinc-950 dark:text-white">Kenapa ada halaman area layanan?</h2>
+        <div class="mt-6 space-y-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+          <p>Setiap kota punya konteks bisnis yang berbeda. Halaman area membantu calon klien menemukan informasi jasa pembuatan website yang lebih relevan dengan kebutuhan lokal.</p>
+          <p>Struktur ini juga memudahkan navigasi dari homepage ke halaman kota tanpa menumpuk terlalu banyak link di menu utama.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ServiceAreasSection
+    eyebrow="Daftar kota"
+    title="Pilih area layanan jasa pembuatan website"
+    description="Temukan halaman jasa pembuatan website berdasarkan kota. Semua halaman mengarah ke layanan utama website, aplikasi web, company profile, konten sosial media, dan iklan digital sebagai solusi pertumbuhan bisnis."
+    showCta={false}
+  />
+
+  <section class="bg-brand py-16 text-white">
+    <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-4 sm:px-6 md:flex-row md:items-center lg:px-8">
+      <div>
+        <h2 class="max-w-3xl text-3xl font-extrabold tracking-tight sm:text-5xl">Tidak menemukan kota Anda?</h2>
+        <p class="mt-4 max-w-2xl text-blue-100">Tetap bisa konsultasi. Proses pembuatan website bisa dilakukan online dengan alur brief, desain, revisi, development, dan launch yang jelas.</p>
+      </div>
+      <Button href={briefHref} variant="light" class="shrink-0">Konsultasi Sekarang</Button>
+    </div>
+  </section>
+</BaseLayout>

@@ -330,7 +330,9 @@ const faqSchema = isCityPage
               <Button href={briefHref}>Konsultasi Website {cityPage.city}</Button>
               <Button href="/jasa-pembuatan-website/" variant="secondary">Lihat Layanan Website</Button>
             </div>
-            <p class="mt-6 text-sm font-medium text-zinc-700 dark:text-zinc-400">Area layanan: {cityPage.areaContext}.</p>
+            <p class="mt-6 text-sm font-medium text-zinc-700 dark:text-zinc-400">
+              Area layanan: {cityPage.areaContext}. <a href="/area-layanan/" class="text-brand underline-offset-4 hover:underline dark:text-blue-300">Lihat area layanan lain</a>.
+            </p>
           </div>
           <aside class="relative flex items-center justify-center lg:justify-end">
             <MockupWebsite issueHighlights={issueHighlights} />

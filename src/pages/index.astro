@@ -3,6 +3,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import Button from '@components/Button.astro';
 import ServiceCard from '@components/ServiceCard.astro';
 import FaqAccordion from '@components/FaqAccordion.astro';
+import ServiceAreasSection from '@components/ServiceAreasSection.astro';
 import { portfolio, processSteps, services, techStack, testimonials, contact } from '@data/site';
 
 import MockupWebsite from '@components/mockups/MockupWebsite.astro';
@@ -349,6 +350,12 @@ const faqSchema = {
       </div>
     </div>
   </section>
+
+  <ServiceAreasSection
+    title="Area layanan jasa pembuatan website"
+    description="Kami membantu bisnis di Jogja dan berbagai kota lain membangun website profesional, mulai dari company profile, landing page, katalog produk, toko online, hingga aplikasi web sesuai kebutuhan bisnis."
+    limit={8}
+  />
 
   <section id="pertanyaan-umum" class="bg-white dark:bg-zinc-950 py-20">
     <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1fr] lg:px-8">

@@ -8,6 +8,7 @@ const exists = (file) => fs.existsSync(path.join(root, file));
 
 const homeHtml = read('dist/index.html');
 const servicesHtml = read('dist/services/index.html');
+const areaLayananHtml = read('dist/area-layanan/index.html');
 const websiteServiceHtml = read('dist/jasa-pembuatan-website/index.html');
 const jakartaCityHtml = read('dist/jasa-pembuatan-website-jakarta/index.html');
 const sitemap = read('dist/sitemap-0.xml');
@@ -40,10 +41,20 @@ assert.match(homeHtml, /<meta property="og:image" content="https:\/\/www\.jasamu
 assert.match(homeHtml, /"@type":"WebSite"/, 'Homepage must include WebSite schema');
 assert.match(homeHtml, /"@type":"Organization"/, 'Homepage must include Organization schema');
 assert.match(homeHtml, /"url":"https:\/\/www\.jasamurahweb\.com\/?"/, 'Schema URL must use www domain');
+assert.match(homeHtml, /href="\/area-layanan\/"/, 'Homepage must link to service area hub');
+assert.match(homeHtml, /href="\/jasa-pembuatan-website-jakarta\/"/, 'Homepage service area section must link to priority city pages');
 assert.doesNotMatch(homeHtml, /https:\/\/jasamurahweb\.com/, 'Homepage must not output non-www absolute URLs');
 
 assert.match(servicesHtml, /<h2[^>]*>Pilih layanan digital sesuai kebutuhan bisnis Anda<\/h2>/, 'Services index must include an H2 before service cards');
 assert.match(servicesHtml, /<meta name="robots" content="index, follow"\s*\/?\s*>/, 'Services page robots meta must be explicit');
+
+assert.ok(exists('dist/area-layanan/index.html'), 'Service area hub page must exist: /area-layanan/');
+assert.match(sitemap, /https:\/\/www\.jasamurahweb\.com\/area-layanan\//, 'Sitemap must include service area hub: /area-layanan/');
+assert.match(areaLayananHtml, /<h1[^>]*>Jasa Pembuatan Website untuk Bisnis di Berbagai Kota<\/h1>/, 'Service area hub must have a clear H1');
+assert.match(areaLayananHtml, /<link rel="canonical" href="https:\/\/www\.jasamurahweb\.com\/area-layanan\/"\s*\/?\s*>/, 'Service area hub canonical must be self-referencing');
+assert.match(areaLayananHtml, /"@type":"ItemList"/, 'Service area hub must include ItemList schema');
+assert.match(areaLayananHtml, /href="\/jasa-pembuatan-website-jakarta\/"/, 'Service area hub must link to city pages');
+assert.match(areaLayananHtml, /href="\/jasa-pembuatan-website-jayapura\/"/, 'Service area hub must include all city pages');
 
 for (const slug of serviceSlugs) {
   assert.ok(exists(`dist/${slug}/index.html`), `Root service URL must exist: /${slug}/`);
@@ -68,6 +79,7 @@ assert.match(jakartaCityHtml, /<link rel="canonical" href="https:\/\/www\.jasamu
 assert.match(jakartaCityHtml, /"@type":"FAQPage"/, 'City pages must include FAQ schema');
 assert.match(jakartaCityHtml, /"@type":"Service"/, 'City pages must include Service schema');
 assert.match(jakartaCityHtml, /href="\/jasa-pembuatan-website\/"/, 'City pages must internally link to main website service page');
+assert.match(jakartaCityHtml, /href="\/area-layanan\/"/, 'City pages must internally link back to service area hub');
 
 assert.match(sitemap, /https:\/\/www\.jasamurahweb\.com\//, 'Sitemap URLs must use www domain');
 assert.doesNotMatch(sitemap, /https:\/\/jasamurahweb\.com\//, 'Sitemap must not contain non-www URLs');
