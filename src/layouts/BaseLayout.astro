@@ -2,6 +2,7 @@
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 import FloatingWhatsapp from '@components/FloatingWhatsapp.astro';
+import { contact } from '@data/site';
 import '../styles/global.css';
 
 interface Props {
@@ -16,13 +17,35 @@ interface Props {
 const {
   title,
   description,
-  ogImage = '/home_visual_blue.png',
+  ogImage = '/og-image.png',
   canonicalUrl,
 } = Astro.props;
 
-const siteUrl = 'https://jasamurahweb.com';
+const siteUrl = 'https://www.jasamurahweb.com';
 const currentUrl = canonicalUrl ?? new URL(Astro.url.pathname, siteUrl).href;
 const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'jasamurahweb.com',
+  url: siteUrl,
+  logo: `${siteUrl}/logo-jasamurabweb.png`,
+  sameAs: [contact.instagram, contact.facebook],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'jasamurahweb.com',
+  url: siteUrl,
+  publisher: {
+    '@type': 'Organization',
+    name: 'jasamurahweb.com',
+    url: siteUrl,
+  },
+  inLanguage: 'id-ID',
+};
 ---
 
 <!doctype html>
@@ -35,6 +58,7 @@ const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogIm
     <!-- SEO Primary -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href={currentUrl} />
 
     <!-- Open Graph -->
@@ -53,6 +77,9 @@ const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogIm
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageAbsolute} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} is:inline />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} is:inline />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/icon.png" />

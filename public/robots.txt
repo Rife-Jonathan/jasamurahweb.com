@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jasamurahweb.com/sitemap-index.xml
+Sitemap: https://www.jasamurahweb.com/sitemap-index.xml

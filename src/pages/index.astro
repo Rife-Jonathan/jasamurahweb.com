@@ -109,9 +109,9 @@ const localBusinessSchema = {
   name: 'jasamurahweb.com',
   description:
     'Jasa pembuatan website profesional untuk bisnis, company profile, landing page, toko online, aplikasi web, konten sosial media, dan iklan digital.',
-  url: 'https://jasamurahweb.com',
-  logo: 'https://jasamurahweb.com/logo-jasamurabweb.png',
-  image: 'https://jasamurahweb.com/home_visual_blue.png',
+  url: 'https://www.jasamurahweb.com',
+  logo: 'https://www.jasamurahweb.com/logo-jasamurabweb.png',
+  image: 'https://www.jasamurahweb.com/og-image.png',
   telephone: contact.whatsappDisplay,
   email: contact.email,
   address: {
@@ -157,9 +157,9 @@ const faqSchema = {
 ---
 
 <BaseLayout
-  title="Jasa Pembuatan Website Profesional untuk Bisnis | jasamurahweb.com"
-  description="Jasa pembuatan website profesional untuk bisnis, company profile, landing page, toko online, dan website custom. Desain responsif, SEO-ready, dan siap mendukung penjualan online."
-  ogImage="/home_visual_blue.png"
+  title="Jasa Pembuatan Website Jogja | jasamurahweb.com"
+  description="Jasa pembuatan website Jogja untuk bisnis yang ingin tampil profesional, punya aset digital sendiri, dan siap meningkatkan kredibilitas online."
+  ogImage="/og-image.png"
 >
   <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} is:inline />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} is:inline />
@@ -167,12 +167,12 @@ const faqSchema = {
   <section class="overflow-hidden bg-white dark:bg-zinc-950">
     <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-20">
       <div>
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Jasa Pembuatan Website Profesional</p>
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Jasa Pembuatan Website Jogja</p>
         <h1 class="mt-5 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-zinc-950 dark:text-white sm:text-5xl lg:text-6xl">
-          Jasa Pembuatan Website Profesional untuk Bisnis yang Ingin Tampil Lebih Kredibel
+          Jasa Pembuatan Website Jogja untuk Bisnis yang Ingin Tampil Lebih Profesional
         </h1>
         <p class="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-          jasamurahweb.com membantu bisnis membangun website yang rapi, cepat, mobile-friendly, dan siap mendukung penjualan online. Kami menyusun website bukan hanya dari sisi desain, tetapi juga struktur halaman, copywriting, CTA, dan jalur konsultasi agar calon pelanggan lebih mudah memahami dan menghubungi bisnis Anda.
+          jasamurahweb.com membantu bisnis di Jogja membangun website yang rapi, cepat, mobile-friendly, dan siap mendukung penjualan online. Kami menyusun website bukan hanya dari sisi desain, tetapi juga struktur halaman, copywriting, CTA, dan jalur konsultasi agar calon pelanggan lebih mudah memahami dan menghubungi bisnis Anda.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button href={briefHref}>Konsultasi Website Sekarang</Button>
@@ -187,6 +187,7 @@ const faqSchema = {
           alt="Jasa pembuatan website profesional untuk bisnis"
           width="800"
           height="600"
+          loading="eager"
           fetchpriority="high"
           class="relative w-full max-w-2xl rounded-2xl object-contain drop-shadow-2xl shadow-blue-900/20 dark:shadow-black/50"
           style="animation: float 6s ease-in-out infinite;"

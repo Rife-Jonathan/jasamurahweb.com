@@ -13,7 +13,7 @@ const { post } = Astro.props;
 const { Content, headings } = await render(post);
 const readingTime = Math.max(1, Math.ceil((post.body ?? '').length / 900));
 
-const siteUrl = 'https://jasamurahweb.com';
+const siteUrl = 'https://www.jasamurahweb.com';
 const postUrl = `${siteUrl}/blog/${post.data.slug}/`;
 
 /** Article schema — penulis sebagai Person untuk E-E-A-T yang lebih kuat */

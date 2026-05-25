@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 
-const siteUrl = 'https://jasamurahweb.com';
+const siteUrl = 'https://www.jasamurahweb.com';
 const serviceUrl = `${siteUrl}/services/${entry.id}/`;
 
 const briefMessage = `Halo tim jasamurahweb, saya ingin ajukan brief untuk layanan ${entry.data.title}. Bisa bantu konsultasi langkah awalnya?`;
