@@ -4,62 +4,62 @@ export const services = [
     slug: 'jasa-pembuatan-website',
     icon: 'web',
     summary:
-      'Website cepat dan responsif untuk bisnis yang ingin tampil kredibel, mudah ditemukan di Google, dan punya jalur konsultasi yang jelas. Cocok untuk landing page, katalog layanan, dan website perusahaan.',
+      'Website bisnis yang cepat, responsif, SEO-ready, dan punya struktur halaman yang jelas untuk membangun kredibilitas serta mendorong konsultasi. Cocok untuk company profile, landing page, katalog produk, dan website perusahaan.',
   },
   {
     title: 'Jasa Aplikasi Web dan Android',
     slug: 'jasa-aplikasi-web-dan-android',
     icon: 'app',
     summary:
-      'Aplikasi custom untuk mengurangi proses manual, merapikan data, dan mempercepat keputusan operasional. Kami bantu dari pemetaan workflow, MVP, database, hingga integrasi API.',
+      'Aplikasi custom untuk merapikan proses operasional, dashboard, database, booking, membership, dan workflow internal bisnis. Kami bantu dari pemetaan kebutuhan, MVP, hingga integrasi API.',
   },
   {
     title: 'Jasa Pembuatan Company Profile',
     slug: 'jasa-pembuatan-company-profile',
     icon: 'profile',
     summary:
-      'Company profile profesional untuk membangun trust di meeting, tender, proposal, investor deck, dan halaman korporat. Narasi, visual, dan bukti bisnis disusun agar perusahaan terlihat lebih siap.',
+      'Company profile profesional untuk kebutuhan presentasi, tender, proposal, investor deck, dan identitas perusahaan. Narasi, visual, dan bukti bisnis disusun agar brand terlihat lebih siap dipercaya.',
   },
   {
     title: 'Jasa Pembuatan Konten Sosmed',
     slug: 'jasa-pembuatan-konten-sosmed',
     icon: 'content',
     summary:
-      'Konten Instagram, Facebook, TikTok, dan LinkedIn dengan ide bulanan, desain rapi, caption kuat, dan jadwal posting yang konsisten. Brand tampil aktif tanpa kehilangan arah komunikasi.',
+      'Konten sosial media yang konsisten agar brand tetap aktif dan pesan bisnis selaras dengan website. Cocok untuk menjaga awareness, edukasi market, dan distribusi penawaran.',
   },
   {
     title: 'Jasa Iklan di Meta dan Google',
     slug: 'jasa-iklan-di-meta-dan-google',
     icon: 'ads',
     summary:
-      'Manajemen Meta Ads dan Google Ads dengan tracking conversion, landing page alignment, A/B testing, dan laporan performa. Fokusnya menekan biaya boncos dan memperbesar campaign yang terbukti.',
+      'Pengelolaan campaign Meta Ads dan Google Ads dengan landing page, tracking conversion, A/B testing, dan laporan performa. Fokusnya membuat traffic lebih terukur dan siap dievaluasi.',
   },
 ];
 
 export const processSteps = [
   {
     step: '01',
-    title: 'Riset Bisnis',
-    label: 'Pahami Target',
-    description: 'Kami memetakan target market, hambatan penjualan, aset digital yang sudah ada, dan tujuan bisnis yang paling realistis.',
+    title: 'Konsultasi Kebutuhan',
+    label: 'Pahami Bisnis',
+    description: 'Kami memahami jenis bisnis, target pelanggan, layanan utama, referensi desain, dan tujuan website sebelum menentukan arah halaman.',
   },
   {
     step: '02',
-    title: 'Rencana Kerja',
-    label: 'Prioritas Konversi',
-    description: 'Setiap halaman, fitur, dan campaign disusun berdasarkan prioritas konversi, bukan daftar keinginan yang menghabiskan budget.',
+    title: 'Struktur & Copywriting',
+    label: 'Susun Pesan',
+    description: 'Kami menyusun alur halaman, pesan utama, CTA, dan konten awal agar website mudah dipahami calon pelanggan dan tidak sekadar menjadi brosur online.',
   },
   {
     step: '03',
-    title: 'Produksi',
-    label: 'Sprint Pembangunan',
-    description: 'Desain, copywriting, development, dan integrasi dikerjakan dalam milestone yang jelas agar progres mudah dipantau.',
+    title: 'Desain & Development',
+    label: 'Bangun Website',
+    description: 'Website dikembangkan dengan tampilan profesional, responsif, cepat dibuka, dan sesuai kebutuhan bisnis di desktop maupun mobile.',
   },
   {
     step: '04',
-    title: 'Evaluasi',
-    label: 'Scale-up Terukur',
-    description: 'Setelah rilis, kami membaca data performa, memperbaiki bottleneck, dan menyiapkan langkah scale berikutnya.',
+    title: 'Review & Optimasi',
+    label: 'Siap Tumbuh',
+    description: 'Setelah review, website dirilis dan bisa dilengkapi tracking, integrasi WhatsApp, analytics, serta strategi digital lanjutan seperti iklan atau konten.',
   },
 ];
 
@@ -69,21 +69,21 @@ export const portfolio = [
     title: 'Landing Page Lead Generation',
     industry: 'Edukasi profesional',
     metric: '+150%',
-    result: 'kenaikan permintaan konsultasi dari traffic iklan',
+    result: 'kenaikan permintaan konsultasi setelah struktur halaman, CTA, dan tracking iklan dirapikan',
   },
   {
     category: 'Aplikasi',
     title: 'Dashboard Operasional Cabang',
     industry: 'Retail multi-lokasi',
     metric: '7 hari',
-    result: 'penghematan waktu rekap laporan mingguan',
+    result: 'penghematan waktu rekap laporan mingguan setelah proses manual diubah menjadi sistem internal',
   },
   {
     category: 'Iklan',
     title: 'Meta Ads Funnel Audit',
     industry: 'F&B lokal',
     metric: '-32%',
-    result: 'penurunan biaya per lead setelah struktur campaign dirapikan',
+    result: 'penurunan biaya per lead setelah landing page dan struktur campaign diselaraskan',
   },
 ];
 

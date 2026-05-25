@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Button from '@components/Button.astro';
 import ServiceCard from '@components/ServiceCard.astro';
+import FaqAccordion from '@components/FaqAccordion.astro';
 import { portfolio, processSteps, services, techStack, testimonials, contact } from '@data/site';
 
 import MockupWebsite from '@components/mockups/MockupWebsite.astro';
@@ -9,80 +10,181 @@ import MockupApp from '@components/mockups/MockupApp.astro';
 import MockupMarketing from '@components/mockups/MockupMarketing.astro';
 import MockupGeneric from '@components/mockups/MockupGeneric.astro';
 
-const briefMessage = `Halo jasamurahweb.com, saya melihat contoh proyek di website dan tertarik untuk membahas proyek yang serupa.`;
+const briefMessage = `Halo jasamurahweb.com, saya ingin konsultasi jasa pembuatan website untuk bisnis saya.`;
 const briefHref = `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(briefMessage)}`;
 
-/** JSON-LD LocalBusiness schema untuk sinyal lokal Yogyakarta */
+const websiteTypes = [
+  {
+    title: 'Website Company Profile',
+    description:
+      'Website profesional untuk memperkenalkan perusahaan, layanan, legalitas, portofolio, testimoni, dan kontak bisnis dalam satu aset digital yang rapi.',
+  },
+  {
+    title: 'Landing Page Penjualan',
+    description:
+      'Halaman fokus konversi untuk campaign iklan, launching produk, promosi layanan, atau pengumpulan leads dari WhatsApp dan form konsultasi.',
+  },
+  {
+    title: 'Website Katalog Produk / Toko Online',
+    description:
+      'Website untuk menampilkan produk, kategori, detail penawaran, tombol WhatsApp, dan alur pembelian sederhana yang mudah dipahami pelanggan.',
+  },
+  {
+    title: 'Website Layanan Profesional',
+    description:
+      'Cocok untuk konsultan, klinik, kontraktor, edukasi, travel, agency, dan bisnis jasa lain yang membutuhkan halaman kredibel untuk calon klien.',
+  },
+  {
+    title: 'Website Custom dan Aplikasi Web',
+    description:
+      'Untuk kebutuhan lebih kompleks seperti dashboard, booking, membership, database, sistem operasional, atau integrasi API.',
+  },
+];
+
+const whyChooseItems = [
+  {
+    title: 'Struktur website dibuat dari kebutuhan bisnis',
+    description:
+      'Kami mulai dari memahami layanan, target pelanggan, tujuan halaman, dan aksi yang ingin didorong sebelum masuk ke desain.',
+  },
+  {
+    title: 'Desain profesional dan responsif',
+    description:
+      'Website dibuat nyaman dibuka di desktop maupun ponsel, karena calon pelanggan sering mengecek bisnis dari smartphone.',
+  },
+  {
+    title: 'Copywriting diarahkan ke konversi',
+    description:
+      'Setiap section menjawab pertanyaan pengunjung: apa yang ditawarkan, kenapa percaya, bagaimana prosesnya, dan bagaimana menghubungi Anda.',
+  },
+  {
+    title: 'SEO-ready sejak awal',
+    description:
+      'Struktur heading, metadata, internal link, kecepatan halaman, dan CTA disiapkan agar website lebih siap untuk optimasi pencarian.',
+  },
+  {
+    title: 'Bisa lanjut ke iklan, konten, dan aplikasi',
+    description:
+      'Setelah website aktif, bisnis bisa melanjutkan ke Meta Ads, Google Ads, konten sosial media, company profile, atau aplikasi web custom.',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Apa saja jenis website yang bisa dibuat?',
+    answer:
+      'Kami bisa membantu pembuatan website company profile, landing page, katalog produk, toko online sederhana, website layanan profesional, dan website custom sesuai kebutuhan bisnis.',
+  },
+  {
+    question: 'Apakah website sudah mobile-friendly?',
+    answer:
+      'Ya. Website dibuat responsif agar tampil rapi di desktop, tablet, dan smartphone sehingga calon pelanggan nyaman membaca informasi bisnis Anda.',
+  },
+  {
+    question: 'Apakah website sudah SEO-friendly?',
+    answer:
+      'Struktur dasar website disiapkan agar SEO-ready, termasuk heading, meta title, meta description, internal link, kecepatan halaman, dan struktur konten yang mudah dibaca.',
+  },
+  {
+    question: 'Apakah website bisa digunakan untuk Google Ads dan Meta Ads?',
+    answer:
+      'Bisa. Website dapat disiapkan sebagai landing page campaign dengan CTA, tracking, dan struktur halaman yang mendukung konversi dari iklan digital.',
+  },
+  {
+    question: 'Apakah bisa membuat website custom atau aplikasi web?',
+    answer:
+      'Bisa. Untuk kebutuhan lebih kompleks, jasamurahweb.com juga melayani pembuatan aplikasi web dan Android, dashboard, sistem booking, membership, database, dan integrasi API.',
+  },
+  {
+    question: 'Apakah jasamurahweb.com juga membantu company profile dan konten?',
+    answer:
+      'Ya. Selain website, kami juga membantu pembuatan company profile, konten sosial media, serta iklan digital agar brand tampil lebih konsisten di semua channel.',
+  },
+];
+
+/** JSON-LD LocalBusiness schema untuk konteks bisnis dan area layanan */
 const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "jasamurahweb.com",
-  "description": "Agensi digital end-to-end di Yogyakarta untuk pembuatan website, aplikasi, company profile, konten sosial media, dan iklan Meta Google yang terukur.",
-  "url": "https://jasamurahweb.com",
-  "logo": "https://jasamurahweb.com/logo-jasamurabweb.png",
-  "image": "https://jasamurahweb.com/home_visual_blue.png",
-  "telephone": contact.whatsappDisplay,
-  "email": contact.email,
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Jl. Candi Gebang permai blok 6 no 2 Jetis, Wedomartani",
-    "addressLocality": "Sleman",
-    "addressRegion": "Yogyakarta",
-    "addressCountry": "ID"
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'jasamurahweb.com',
+  description:
+    'Jasa pembuatan website profesional untuk bisnis, company profile, landing page, toko online, aplikasi web, konten sosial media, dan iklan digital.',
+  url: 'https://jasamurahweb.com',
+  logo: 'https://jasamurahweb.com/logo-jasamurabweb.png',
+  image: 'https://jasamurahweb.com/home_visual_blue.png',
+  telephone: contact.whatsappDisplay,
+  email: contact.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Jl. Candi Gebang permai blok 6 no 2 Jetis, Wedomartani',
+    addressLocality: 'Sleman',
+    addressRegion: 'Yogyakarta',
+    addressCountry: 'ID',
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -7.7273,
-    "longitude": 110.4067
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -7.7273,
+    longitude: 110.4067,
   },
-  "areaServed": [
-    { "@type": "City", "name": "Yogyakarta" },
-    { "@type": "City", "name": "Sleman" },
-    { "@type": "City", "name": "Bantul" },
-    { "@type": "Country", "name": "Indonesia" }
+  areaServed: [
+    { '@type': 'Country', name: 'Indonesia' },
+    { '@type': 'City', name: 'Yogyakarta' },
+    { '@type': 'City', name: 'Sleman' },
+    { '@type': 'City', name: 'Bantul' },
   ],
-  "sameAs": [
-    contact.instagram,
-    contact.facebook
-  ],
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    "opens": "09:00",
-    "closes": "18:00"
+  sameAs: [contact.instagram, contact.facebook],
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '18:00',
   },
-  "priceRange": "Rp5.000.000+"
+  priceRange: 'Rp5.000.000+',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
 };
 ---
 
 <BaseLayout
-  title="Agensi Digital Yogyakarta — Website, Aplikasi & Iklan | jasamurahweb"
-  description="Agensi digital di Yogyakarta untuk pembuatan website, aplikasi, company profile, konten sosial media, dan iklan Meta Google yang terukur."
+  title="Jasa Pembuatan Website Profesional untuk Bisnis | jasamurahweb.com"
+  description="Jasa pembuatan website profesional untuk bisnis, company profile, landing page, toko online, dan website custom. Desain responsif, SEO-ready, dan siap mendukung penjualan online."
   ogImage="/home_visual_blue.png"
 >
   <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} is:inline />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} is:inline />
 
   <section class="overflow-hidden bg-white dark:bg-zinc-950">
     <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-20">
       <div>
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Digital growth partner</p>
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Jasa Pembuatan Website Profesional</p>
         <h1 class="mt-5 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-zinc-950 dark:text-white sm:text-5xl lg:text-6xl">
-          Transformasi Kehadiran Digital Bisnis Anda Bersama jasamurahweb.com.
+          Jasa Pembuatan Website Profesional untuk Bisnis yang Ingin Tampil Lebih Kredibel
         </h1>
         <p class="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-          Kami membangun website premium, aplikasi, dan strategi marketing yang menghasilkan pertumbuhan nyata. Agensi digital end-to-end untuk scale-up bisnis Anda tanpa biaya overhead yang membingungkan. Cepat, transparan, dan berorientasi hasil.
+          jasamurahweb.com membantu bisnis membangun website yang rapi, cepat, mobile-friendly, dan siap mendukung penjualan online. Kami menyusun website bukan hanya dari sisi desain, tetapi juga struktur halaman, copywriting, CTA, dan jalur konsultasi agar calon pelanggan lebih mudah memahami dan menghubungi bisnis Anda.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Button href="/contact/">Konsultasi Gratis Sekarang</Button>
-          <Button href="/services/" variant="secondary">Lihat Layanan Kami</Button>
+          <Button href={briefHref}>Konsultasi Website Sekarang</Button>
+          <Button href="/services/" variant="secondary">Lihat Layanan Digital</Button>
         </div>
-        <p class="mt-6 text-sm font-medium text-zinc-700 dark:text-zinc-400">★★★★★ Dipercaya oleh 50+ pemilik bisnis dan brand di Indonesia.</p>
+        <p class="mt-6 text-sm font-medium text-zinc-700 dark:text-zinc-400">Cocok untuk website company profile, landing page, katalog produk, toko online, dan website bisnis custom.</p>
       </div>
       <div class="relative flex items-center justify-center lg:justify-end">
         <div class="absolute -inset-4 rounded-[3rem] bg-brand-50/80 dark:bg-brand-900/20 blur-2xl"></div>
         <img
           src="/home_visual_blue.png"
-          alt="Keberhasilan Digital Bersama jasamurahweb.com"
+          alt="Jasa pembuatan website profesional untuk bisnis"
           width="800"
           height="600"
           fetchpriority="high"
@@ -100,13 +202,26 @@ const localBusinessSchema = {
   </section>
 
   <section class="bg-white dark:bg-zinc-950 py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Layanan utama</p>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">Lima pilar digital untuk membuat bisnis lebih mudah dipercaya dan dibeli.</h2>
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1fr] lg:px-8">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Website sebagai aset bisnis</p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">Website yang bagus harus membantu bisnis dipercaya dan dihubungi.</h2>
+        <p class="mt-6 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+          Banyak website terlihat selesai, tetapi belum tentu membantu bisnis mendapatkan kepercayaan. Website yang efektif harus menjelaskan layanan dengan jelas, menunjukkan bukti, mudah dibuka dari ponsel, dan mengarahkan pengunjung ke langkah berikutnya seperti WhatsApp, form konsultasi, atau pembelian.
+        </p>
       </div>
-      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {services.map((service) => <ServiceCard {...service} />)}
+      <div class="grid gap-4 sm:grid-cols-2">
+        {[
+          'Membangun kredibilitas bisnis sejak kunjungan pertama.',
+          'Menjelaskan layanan, produk, dan nilai pembeda secara rapi.',
+          'Menjadi pusat informasi resmi untuk SEO, iklan, dan konten sosial media.',
+          'Bisa dikembangkan menjadi katalog, booking, dashboard, atau aplikasi web.',
+        ].map((item) => (
+          <div class="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50">
+            <span class="grid h-8 w-8 place-items-center rounded-full bg-brand text-sm font-bold text-white">✓</span>
+            <p class="mt-4 font-semibold leading-relaxed text-zinc-800 dark:text-zinc-200">{item}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -114,8 +229,58 @@ const localBusinessSchema = {
   <section class="border-y border-zinc-200 bg-brand-50 py-20 text-zinc-950 dark:border-zinc-800 dark:bg-zinc-900/30 dark:text-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand dark:text-blue-300">Jenis website</p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Jenis website yang bisa kami bantu.</h2>
+        <p class="mt-5 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">Setiap bisnis membutuhkan struktur website yang berbeda. Kami bantu memilih format yang paling relevan dengan tujuan, budget, dan tahap pertumbuhan bisnis Anda.</p>
+      </div>
+      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {websiteTypes.map((item) => (
+          <article class="rounded-xl border border-blue-100 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
+            <h3 class="text-xl font-bold text-zinc-950 dark:text-white">{item.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white dark:bg-zinc-950 py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Layanan utama</p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">Layanan digital untuk membangun dan mengembangkan bisnis online.</h2>
+        <p class="mt-5 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+          Fokus utama homepage adalah jasa pembuatan website, tetapi pertumbuhan digital tidak berhenti saat website live. Karena itu, jasamurahweb.com juga menyiapkan layanan lanjutan agar website bisa terhubung dengan branding, konten, aplikasi, dan iklan digital.
+        </p>
+      </div>
+      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {services.map((service) => <ServiceCard {...service} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-brand-50 dark:bg-zinc-900/30 py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Kenapa memilih kami</p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">Kenapa memilih jasamurahweb.com untuk pembuatan website bisnis?</h2>
+      </div>
+      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {whyChooseItems.map((item) => (
+          <article class="rounded-xl border border-blue-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50">
+            <h3 class="text-xl font-bold text-zinc-950 dark:text-white">{item.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-zinc-200 bg-white py-20 text-zinc-950 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
         <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand dark:text-blue-300">Cara kerja</p>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Dari hambatan bisnis menuju aset digital yang bisa diukur.</h2>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Alur kerja pembuatan website.</h2>
       </div>
       <div class="mt-10 grid gap-5 md:grid-cols-4">
         {processSteps.map((item) => (
@@ -135,7 +300,8 @@ const localBusinessSchema = {
       <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div class="max-w-2xl">
           <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Contoh hasil kerja</p>
-          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">Contoh proyek yang menghubungkan desain, teknologi, dan hasil bisnis.</h2>
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">Contoh hasil kerja yang menghubungkan desain, teknologi, dan pertumbuhan bisnis.</h2>
+          <p class="mt-5 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">Website yang efektif tidak hanya terlihat rapi, tetapi juga membantu bisnis mendapatkan kepercayaan, lead, dan proses digital yang lebih terukur.</p>
         </div>
         <Button href={briefHref} variant="secondary">Bahas Projek Serupa</Button>
       </div>
@@ -183,11 +349,24 @@ const localBusinessSchema = {
     </div>
   </section>
 
+  <section id="pertanyaan-umum" class="bg-white dark:bg-zinc-950 py-20">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1fr] lg:px-8">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">FAQ</p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">Pertanyaan umum tentang jasa pembuatan website.</h2>
+        <p class="mt-5 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">Beberapa hal yang sering ditanyakan sebelum bisnis mulai membuat website profesional.</p>
+      </div>
+      <FaqAccordion items={faqItems} />
+    </div>
+  </section>
+
   <section class="bg-brand py-16 text-white">
     <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-4 sm:px-6 md:flex-row md:items-center lg:px-8">
-      <h2 class="max-w-3xl text-3xl font-extrabold tracking-tight sm:text-5xl">Siap Menguasai Pasar Digital? Mari Mulai Projek Anda Hari Ini.</h2>
-      <Button href="/contact/" variant="light" class="shrink-0">Mulai Konsultasi</Button>
+      <div>
+        <h2 class="max-w-3xl text-3xl font-extrabold tracking-tight sm:text-5xl">Siap membuat website yang lebih profesional?</h2>
+        <p class="mt-4 max-w-2xl text-blue-100">Ceritakan kebutuhan bisnis Anda. Kami bantu susun struktur website, copywriting, desain, dan jalur konsultasi agar website menjadi aset digital yang benar-benar mendukung kredibilitas dan penjualan.</p>
+      </div>
+      <Button href={briefHref} variant="light" class="shrink-0">Konsultasi Website Sekarang</Button>
     </div>
   </section>
 </BaseLayout>
-
