@@ -39,7 +39,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'klinik', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Pasar Jakarta sangat kompetitif, sehingga website perlu langsung menjelaskan positioning, layanan utama, bukti kerja, dan jalur konsultasi yang jelas. Fokus halaman diarahkan untuk perusahaan B2B, konsultan, klinik, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Jakarta adalah pasar paling kompetitif di Indonesia. Perusahaan B2B di sini biasanya sudah punya daftar pendek vendor jauh sebelum mencari di Google. Website Anda harus masuk ke daftar itu — dengan menjelaskan value secara eksplisit, menyajikan portofolio nyata, dan memberi akses mudah ke form permintaan penawaran. Bukan dengan jargon.',
+    localBusinessContext: 'Di Jakarta, calon pelanggan untuk perusahaan B2B, konsultan, klinik membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Jakarta Pusat', 'Jakarta Selatan', 'Jakarta Barat', 'Jakarta Timur', 'Jakarta Utara', 'Tangerang', 'Bekasi', 'Depok'],
     buyerProblems: ['Halaman layanan belum menjawab pertanyaan procurement atau decision maker.', 'Profil perusahaan dan bukti kerja belum tersusun menjadi alur penilaian yang mudah.', 'Calon klien perlu jalur request quotation yang jelas sebelum menghubungi tim.'],
     recommendedWebsiteTypes: [
@@ -81,7 +81,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'logistik', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Bisnis Surabaya membutuhkan website yang rapi untuk memperkuat trust dan memudahkan calon pelanggan membandingkan layanan sebelum menghubungi tim sales. Fokus halaman diarahkan untuk perdagangan, manufaktur, logistik, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Pasar Surabaya dan sekitarnya digerakkan oleh distributor, manufaktur, dan penyedia logistik. Pola pembelian di sini khas: supplier dicari di Google, dibandingkan 2-3 website, lalu langsung dihubungi via WhatsApp. Mereka tidak membaca artikel panjang — mereka mau lihat produk, harga, minimum order, dan kontak. Cepat, langsung.',
+    localBusinessContext: 'Di Surabaya, calon pelanggan untuk perdagangan, manufaktur, logistik membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Surabaya Barat', 'Surabaya Timur', 'Surabaya Selatan', 'Surabaya Utara', 'Sidoarjo', 'Gresik'],
     buyerProblems: ['Produk atau layanan masih tersebar di chat sehingga sulit dibandingkan.', 'Calon partner perlu melihat katalog, area layanan, dan kontak resmi dalam satu halaman.', 'Traffic dari iklan belum punya halaman penawaran yang mudah dilacak.'],
     recommendedWebsiteTypes: [
@@ -123,7 +123,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'kuliner', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Karakter bisnis Bandung yang kreatif membutuhkan website dengan visual rapi, pesan brand yang jelas, dan struktur yang tetap mudah dikonversi. Fokus halaman diarahkan untuk brand kreatif, fashion, kuliner, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Ekosistem Bandung digerakkan oleh brand independen yang membangun audience dari nol lewat Instagram dan komunitas. Mereka tidak punya tim marketing besar. Website di sini adalah karyawan digital 24 jam — harus cukup estetik untuk mewakili brand, tapi cukup jelas untuk mengkonversi pengunjung yang tadinya cuma lihat-lihat jadi pembeli.',
+    localBusinessContext: 'Di Bandung, calon pelanggan untuk brand kreatif, fashion, kuliner membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Bandung', 'Cimahi', 'Kabupaten Bandung', 'Bandung Barat'],
     buyerProblems: ['Visual brand sudah kuat tetapi struktur halaman belum mengarahkan ke inquiry.', 'Portfolio, paket, dan CTA belum tersusun dalam urutan yang membantu calon pelanggan memilih.', 'Konten sosial atau campaign belum punya landing page yang fokus.'],
     recommendedWebsiteTypes: [
@@ -165,7 +165,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'klinik', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Website membantu bisnis Medan tampil resmi, mudah dipahami, dan siap menerima konsultasi dari calon pelanggan lintas Sumatera. Fokus halaman diarahkan untuk distributor, properti, klinik, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Pasar Medan dan Sumatera Utara punya pola unik: banyak transaksi B2B dan jasa yang masih sangat mengandalkan rekomendasi personal. Website berfungsi sebagai validasi — \"oh mereka profesional, ada websitenya, ada informasi lengkapnya\". Karena itu website harus terlihat resmi, informatif, dan mudah diverifikasi oleh calon pelanggan dari luar kota.',
+    localBusinessContext: 'Di Medan, calon pelanggan untuk distributor, properti, klinik membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Medan Kota', 'Medan Baru', 'Medan Selayang', 'Deli Serdang', 'Binjai'],
     buyerProblems: ['Calon pelanggan luar kota membutuhkan informasi area layanan dan kontak yang jelas.', 'Penawaran belum menjelaskan scope, proses, dan estimasi langkah berikutnya.', 'Website perlu menjadi rujukan resmi sebelum percakapan WhatsApp dimulai.'],
     recommendedWebsiteTypes: [
@@ -207,7 +207,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'pendidikan', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Website untuk bisnis Semarang perlu menjelaskan layanan dengan ringkas, menampilkan bukti proses, dan mengarahkan calon klien ke WhatsApp atau form konsultasi. Fokus halaman diarahkan untuk perusahaan jasa, manufaktur, pendidikan, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Koridor Semarang-Solo-Yogyakarta punya lalu lintas bisnis yang stabil sepanjang tahun. Hotel, logistik, jasa konstruksi, dan UMKM makanan adalah sektor yang paling dominan di sini. Pelanggan biasanya mencari via Google, membandingkan harga dan layanan dari 2-3 vendor, lalu memutuskan. Website yang informatif dengan harga transparan memenangkan persaingan ini.',
+    localBusinessContext: 'Di Semarang, calon pelanggan untuk perusahaan jasa, manufaktur, pendidikan membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Semarang Kota', 'Banyumanik', 'Tembalang', 'Ungaran', 'Kendal', 'Demak'],
     buyerProblems: ['Layanan belum dijelaskan dengan bahasa yang mudah dipahami calon klien.', 'FAQ, proses, dan bukti kerja belum ditempatkan dekat CTA.', 'Pengunjung mobile sulit menemukan tombol konsultasi atau form brief.'],
     recommendedWebsiteTypes: [
@@ -249,7 +249,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'travel', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Sebagai pusat bisnis Indonesia Timur, Makassar membutuhkan website yang menjelaskan penawaran untuk pelanggan lokal sekaligus regional. Fokus halaman diarahkan untuk perdagangan, konstruksi, travel, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Pasar Indonesia Timur digerakkan oleh hubungan personal dan rekomendasi dari mulut ke mulut. Website berfungsi sebagai kredensial — bukti bahwa bisnis ini profesional dan serius. Banyak supplier dari Jakarta atau Surabaya yang mencari partner di Makassar melalui Google. Tanpa website yang meyakinkan, Anda tidak akan masuk radar mereka.',
+    localBusinessContext: 'Di Makassar, calon pelanggan untuk perdagangan, konstruksi, travel membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Makassar', 'Maros', 'Gowa', 'Takalar'],
     buyerProblems: ['Calon pelanggan luar kota membutuhkan informasi area layanan dan kontak yang jelas.', 'Penawaran belum menjelaskan scope, proses, dan estimasi langkah berikutnya.', 'Website perlu menjadi rujukan resmi sebelum percakapan WhatsApp dimulai.'],
     recommendedWebsiteTypes: [
@@ -291,7 +291,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'pendidikan', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Website membantu bisnis Palembang membangun kredibilitas online dan membuat calon pelanggan lebih mudah memahami penawaran sebelum bertanya. Fokus halaman diarahkan untuk kuliner, properti, pendidikan, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Kota ini identik dengan kuliner khas yang sudah mendunia — tapi ironisnya infrastruktur digital untuk menjual produk-produk itu masih sangat minim. Banyak pembeli dari luar Sumatera yang ingin pesan pempek atau songket tidak tahu harus menghubungi siapa. Website profesional mengisi celah ini: menjembatani produk legendaris dengan pembeli modern.',
+    localBusinessContext: 'Di Palembang, calon pelanggan untuk kuliner, properti, pendidikan membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Palembang', 'Ogan Ilir', 'Banyuasin', 'Prabumulih'],
     buyerProblems: ['Bisnis sudah dikenal offline tetapi informasi online belum rapi.', 'Calon pelanggan perlu melihat produk, layanan, harga awal, atau proses sebelum bertanya.', 'Website belum menghubungkan katalog, WhatsApp, dan halaman layanan.'],
     recommendedWebsiteTypes: [
@@ -333,7 +333,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'wellness', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Bisnis di Bali membutuhkan website yang kuat secara visual, mobile-friendly, dan siap mendukung inquiry dari pelanggan lokal maupun wisatawan. Fokus halaman diarahkan untuk villa, travel, wellness, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Pasar Bali unik karena audiensnya campuran: wisatawan asing yang cari di Google dalam bahasa Inggris, ekspatriat yang tinggal di sini, dan wisatawan domestik. Ketiganya punya ekspektasi tinggi terhadap tampilan website. Industri hospitality di sini sangat bergantung pada OTA, padahal direct booking bisa menyelamatkan margin 15-20%.',
+    localBusinessContext: 'Di Denpasar, calon pelanggan untuk villa, travel, wellness membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Denpasar', 'Badung', 'Kuta', 'Canggu', 'Ubud', 'Sanur'],
     buyerProblems: ['Galeri dan paket belum disusun menjadi alur inquiry yang jelas.', 'Calon pelanggan dari mobile sulit menemukan WhatsApp, lokasi layanan, atau FAQ booking.', 'Konten visual belum didukung struktur SEO dan tracking konversi.'],
     recommendedWebsiteTypes: [
@@ -375,7 +375,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'kuliner', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Website untuk bisnis Yogyakarta perlu mudah dibaca, rapi di mobile, dan siap menjadi aset digital utama untuk SEO, konten, dan iklan. Fokus halaman diarahkan untuk edukasi, pariwisata, kuliner, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Jogja adalah kota dengan konsentrasi anak muda tertinggi di Indonesia — mahasiswa, seniman, startup founder. Mereka mengakses internet 90% dari HP dan tidak membaca paragraf panjang. Website untuk pasar ini harus mobile-first, kontennya ringkas dan bold, dan loading di bawah 3 detik. Kalau lebih lambat, mereka sudah swipe ke konten lain.',
+    localBusinessContext: 'Di Yogyakarta, calon pelanggan untuk edukasi, pariwisata, kuliner membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Yogyakarta', 'Sleman', 'Bantul', 'Kulon Progo', 'Gunungkidul'],
     buyerProblems: ['Program, jadwal, biaya, dan FAQ belum tersusun untuk calon peserta atau orang tua.', 'Proses pendaftaran masih bergantung pada chat panjang yang berulang.', 'Halaman informasi belum siap mendukung SEO lokal dan campaign pendaftaran.'],
     recommendedWebsiteTypes: [
@@ -417,7 +417,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'properti', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Bisnis Tangerang membutuhkan website yang kredibel untuk mendukung sales, rekrutmen, katalog layanan, dan campaign iklan digital. Fokus halaman diarahkan untuk manufaktur, logistik, properti, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Tangerang adalah rumah bagi ribuan pabrik dan perusahaan logistik yang menjadi supplier perusahaan-perusahaan besar nasional dan multinasional. Tapi banyak yang websitenya masih template gratisan — padahal procurement manager menilai kredibilitas supplier pertama kali dari website. Ini tentang terlihat sekelas klien yang Anda targetkan.',
+    localBusinessContext: 'Di Tangerang, calon pelanggan untuk manufaktur, logistik, properti membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Kota Tangerang', 'Cikokol', 'Karawaci', 'Batuceper', 'Bandara Soekarno-Hatta'],
     buyerProblems: ['Kapabilitas perusahaan belum dijelaskan formal untuk calon klien B2B.', 'Katalog layanan teknis dan area kerja belum mudah dievaluasi sebelum minta penawaran.', 'Kontak procurement atau request quotation belum menjadi CTA utama.'],
     recommendedWebsiteTypes: [
@@ -459,7 +459,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'edukasi', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Pasar Tangerang Selatan cocok untuk website modern dengan copy yang jelas agar brand terlihat siap dipertimbangkan calon pelanggan. Fokus halaman diarahkan untuk startup lokal, klinik, edukasi, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Tangsel punya konsentrasi kelas menengah-atas tertinggi di Jabodetabek. Pelanggan di sini sangat digital-literate — mereka riset dulu di Google sebelum membeli apa pun. Website profesional bukan lagi nilai tambah, melainkan standar minimum. Klinik tanpa website di Tangsel, misalnya, akan kehilangan pasien ke kompetitor yang websitenya lengkap dengan booking online.',
+    localBusinessContext: 'Di Tangerang Selatan, calon pelanggan untuk startup lokal, klinik, edukasi membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['BSD', 'Bintaro', 'Alam Sutera', 'Pamulang', 'Ciputat', 'Serpong'],
     buyerProblems: ['Brand terlihat aktif tetapi halaman layanan belum menjelaskan value proposition dengan cepat.', 'Traffic dari komunitas, iklan, atau referral belum diarahkan ke landing page yang terukur.', 'Website belum siap berkembang menjadi fitur booking, membership, atau dashboard.'],
     recommendedWebsiteTypes: [
@@ -501,7 +501,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'logistik', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Website membantu bisnis Bekasi menjelaskan penawaran di tengah pasar industri dan jasa yang kompetitif tanpa bergantung pada klaim berlebihan. Fokus halaman diarahkan untuk industri, kontraktor, logistik, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Bekasi adalah kota kontras: kawasan industri terbesar di Cikarang berdampingan dengan perumahan kelas menengah yang penghuninya commute ke Jakarta setiap hari. Dua segmen ini butuh pendekatan berbeda — tapi keduanya sama-sama mengakses internet dari HP saat istirahat kerja atau di perjalanan KRL. Website harus ringan, cepat, dan informatif.',
+    localBusinessContext: 'Di Bekasi, calon pelanggan untuk industri, kontraktor, logistik membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Bekasi Kota', 'Bekasi Selatan', 'Bekasi Timur', 'Cikarang', 'Tambun'],
     buyerProblems: ['Kapabilitas perusahaan belum dijelaskan formal untuk calon klien B2B.', 'Katalog layanan teknis dan area kerja belum mudah dievaluasi sebelum minta penawaran.', 'Kontak procurement atau request quotation belum menjadi CTA utama.'],
     recommendedWebsiteTypes: [
@@ -543,7 +543,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'komunitas', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Bisnis Depok membutuhkan website informatif, mudah diakses dari mobile, dan punya jalur konsultasi yang tidak membingungkan pengunjung. Fokus halaman diarahkan untuk pendidikan, klinik, komunitas, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Depok adalah pasar dengan traffic pencarian Google yang sangat tinggi tapi persaingan SEO masih rendah — celah besar untuk bisnis yang mau serius berinvestasi di website. Puluhan ribu mahasiswa UI, Gunadarma, dan kampus lain mencari kos, bimbel, laundry, dan tempat makan setiap hari lewat Google. Ini pasar captive yang luar biasa.',
+    localBusinessContext: 'Di Depok, calon pelanggan untuk pendidikan, klinik, komunitas membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Margonda', 'Beji', 'Pancoran Mas', 'Cimanggis', 'Sawangan'],
     buyerProblems: ['Program, jadwal, biaya, dan FAQ belum tersusun untuk calon peserta atau orang tua.', 'Proses pendaftaran masih bergantung pada chat panjang yang berulang.', 'Halaman informasi belum siap mendukung SEO lokal dan campaign pendaftaran.'],
     recommendedWebsiteTypes: [
@@ -585,7 +585,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'properti', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Website membantu bisnis Bogor memperjelas penawaran, menampilkan proses kerja, dan menjangkau pelanggan lokal maupun Jabodetabek. Fokus halaman diarahkan untuk wisata, kuliner, properti, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Bogor punya siklus bisnis yang unik: meledak setiap weekend dan liburan, lalu sepi di weekday. Tantangannya adalah bagaimana mengisi weekday yang kosong. Website dengan strategi konten yang tepat bisa menarik segmen berbeda untuk weekday: corporate gathering, family package, retreat — yang biasanya tidak bisa datang weekend karena jadwal kantor.',
+    localBusinessContext: 'Di Bogor, calon pelanggan untuk wisata, kuliner, properti membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Bogor Kota', 'Bogor Selatan', 'Bogor Barat', 'Cibinong', 'Sentul'],
     buyerProblems: ['Bisnis sudah dikenal offline tetapi informasi online belum rapi.', 'Calon pelanggan perlu melihat produk, layanan, harga awal, atau proses sebelum bertanya.', 'Website belum menghubungkan katalog, WhatsApp, dan halaman layanan.'],
     recommendedWebsiteTypes: [
@@ -627,7 +627,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'kuliner', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Website untuk bisnis Malang perlu menggabungkan visual menarik, struktur informasi yang jelas, dan CTA yang mudah digunakan. Fokus halaman diarahkan untuk edukasi, wisata, kuliner, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Malang raya adalah ekosistem yang unik karena menggabungkan kota pendidikan dan destinasi wisata keluarga. Mahasiswa dari seluruh Indonesia membawa potensi pasar yang besar — orang tua, teman, dan tren yang menyebar ke kota asal. Sementara wisatawan dari Surabaya dan kota lain datang untuk menikmati udara dingin dan wahana keluarga.',
+    localBusinessContext: 'Di Malang, calon pelanggan untuk edukasi, wisata, kuliner membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Malang Kota', 'Lowokwaru', 'Blimbing', 'Batu', 'Kepanjen'],
     buyerProblems: ['Visual brand sudah kuat tetapi struktur halaman belum mengarahkan ke inquiry.', 'Portfolio, paket, dan CTA belum tersusun dalam urutan yang membantu calon pelanggan memilih.', 'Konten sosial atau campaign belum punya landing page yang fokus.'],
     recommendedWebsiteTypes: [
@@ -669,7 +669,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'logistik', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Bisnis Batam membutuhkan website formal untuk menjelaskan profil, layanan, dan jalur inquiry bagi klien lokal, nasional, maupun lintas negara. Fokus halaman diarahkan untuk industri, ekspor-impor, logistik, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Batam bersaing di arena yang berbeda dari kota Indonesia lainnya — di sini kompetitornya adalah bisnis dari Singapura dan Malaysia. Standar yang berlaku bukan standar lokal, melainkan standar internasional. Website bilingual dengan informasi kapasitas yang bisa diverifikasi bukan lagi opsional — buyer dari luar negeri akan langsung menutup website yang hanya bahasa Indonesia atau terlihat template gratisan.',
+    localBusinessContext: 'Di Batam, calon pelanggan untuk industri, ekspor-impor, logistik membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Batam Center', 'Nagoya', 'Sekupang', 'Batu Aji', 'Tanjung Uncang'],
     buyerProblems: ['Halaman layanan belum menjawab pertanyaan procurement atau decision maker.', 'Profil perusahaan dan bukti kerja belum tersusun menjadi alur penilaian yang mudah.', 'Calon klien perlu jalur request quotation yang jelas sebelum menghubungi tim.'],
     recommendedWebsiteTypes: [
@@ -711,7 +711,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'properti', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Website membantu bisnis Pekanbaru menjelaskan kredibilitas, area layanan, dan penawaran untuk pasar Sumatera dengan alur kontak yang jelas. Fokus halaman diarahkan untuk perkebunan, kontraktor, properti, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Riau punya ekonomi yang kuat dari sektor migas dan perkebunan, tapi adopsi digital di kalangan bisnisnya masih sangat rendah. Ini menciptakan celah besar: persaingan SEO hampir tidak ada, sementara pencarian lokal terus meningkat. Bisnis yang sekarang investasi di website profesional akan mendominasi halaman pertama Google untuk kata kunci bisnis di Pekanbaru dan Riau selama bertahun-tahun ke depan.',
+    localBusinessContext: 'Di Pekanbaru, calon pelanggan untuk perkebunan, kontraktor, properti membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Pekanbaru', 'Tampan', 'Marpoyan Damai', 'Rumbai', 'Siak Hulu'],
     buyerProblems: ['Calon pelanggan luar kota membutuhkan informasi area layanan dan kontak yang jelas.', 'Penawaran belum menjelaskan scope, proses, dan estimasi langkah berikutnya.', 'Website perlu menjadi rujukan resmi sebelum percakapan WhatsApp dimulai.'],
     recommendedWebsiteTypes: [
@@ -753,7 +753,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'properti', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Bisnis Balikpapan membutuhkan website yang menjelaskan kemampuan layanan secara rapi untuk mendukung peluang Kalimantan Timur dan kawasan IKN. Fokus halaman diarahkan untuk kontraktor, energi, properti, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Balikpapan dan Kalimantan Timur sedang mengalami transformasi terbesar dalam sejarahnya dengan pembangunan IKN. Dalam 10-20 tahun ke depan, kota ini akan dipadati pendatang, kontraktor, dan investor dari seluruh Indonesia. Perusahaan yang sekarang membangun online presence akan memetik manfaat terbesar — karena procurement manager dan decision maker selalu memulai pencarian vendor dari Google.',
+    localBusinessContext: 'Di Balikpapan, calon pelanggan untuk kontraktor, energi, properti membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Balikpapan Kota', 'Balikpapan Selatan', 'Balikpapan Utara', 'Penajam', 'kawasan IKN'],
     buyerProblems: ['Kapabilitas perusahaan belum dijelaskan formal untuk calon klien B2B.', 'Katalog layanan teknis dan area kerja belum mudah dievaluasi sebelum minta penawaran.', 'Kontak procurement atau request quotation belum menjadi CTA utama.'],
     recommendedWebsiteTypes: [
@@ -795,7 +795,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'pendidikan', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Website membantu bisnis Samarinda menyusun informasi layanan dan kontak agar calon pelanggan yang mencari online bisa cepat mengambil langkah berikutnya. Fokus halaman diarahkan untuk perdagangan, kontraktor, pendidikan, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Samarinda adalah ibu kota provinsi yang akan menjadi penyangga utama IKN. Ribuan pendatang akan mencari rumah, sekolah, dokter, dan supplier — semuanya dimulai dari Google. Bisnis lokal yang sudah punya website profesional saat gelombang ini datang akan menjadi pilihan pertama para pendatang, bahkan sebelum mereka menginjakkan kaki di Kalimantan.',
+    localBusinessContext: 'Di Samarinda, calon pelanggan untuk perdagangan, kontraktor, pendidikan membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Samarinda Kota', 'Samarinda Ulu', 'Samarinda Seberang', 'Tenggarong'],
     buyerProblems: ['Bisnis sudah dikenal offline tetapi informasi online belum rapi.', 'Calon pelanggan perlu melihat produk, layanan, harga awal, atau proses sebelum bertanya.', 'Website belum menghubungkan katalog, WhatsApp, dan halaman layanan.'],
     recommendedWebsiteTypes: [
@@ -837,7 +837,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'klinik', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Website untuk bisnis Banjarmasin perlu jelas, cepat, dan mampu mengubah pengunjung menjadi prospek melalui WhatsApp atau form. Fokus halaman diarahkan untuk perdagangan, pendidikan, klinik, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Banjarmasin punya identitas yang sangat kuat sebagai kota seribu sungai — tapi identitas ini belum diterjemahkan ke dalam aset digital. Produk khas Banjar seperti sasirangan, batu permata Martapura, dan amplang punya potensi pasar nasional yang besar. Yang kurang adalah kemasan digital yang membuat uniqueness itu terlihat oleh pembeli dari luar Kalimantan.',
+    localBusinessContext: 'Di Banjarmasin, calon pelanggan untuk perdagangan, pendidikan, klinik membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Banjarmasin', 'Banjarbaru', 'Martapura', 'Barito Kuala'],
     buyerProblems: ['Bisnis sudah dikenal offline tetapi informasi online belum rapi.', 'Calon pelanggan perlu melihat produk, layanan, harga awal, atau proses sebelum bertanya.', 'Website belum menghubungkan katalog, WhatsApp, dan halaman layanan.'],
     recommendedWebsiteTypes: [
@@ -879,7 +879,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'hotel', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Bisnis Solo membutuhkan website yang memperkuat identitas brand sekaligus tetap praktis untuk penjualan dan konsultasi online. Fokus halaman diarahkan untuk batik, kuliner, hotel, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Solo adalah gudangnya produk budaya Indonesia — batik, kuliner tradisional, kerajinan kuningan. Tapi banyak pengrajin di sini yang karyanya hanya dikenal di level lokal. Website dengan katalog dan storytelling bisa mengubah ini — sama seperti gudeg yang membuat Jogja dikenal, batik dan kuliner Solo bisa menasional dengan kemasan digital yang tepat.',
+    localBusinessContext: 'Di Solo, calon pelanggan untuk batik, kuliner, hotel membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Solo', 'Surakarta', 'Sukoharjo', 'Karanganyar', 'Boyolali'],
     buyerProblems: ['Visual brand sudah kuat tetapi struktur halaman belum mengarahkan ke inquiry.', 'Portfolio, paket, dan CTA belum tersusun dalam urutan yang membantu calon pelanggan memilih.', 'Konten sosial atau campaign belum punya landing page yang fokus.'],
     recommendedWebsiteTypes: [
@@ -921,7 +921,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'travel', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Website membantu bisnis Cirebon menjelaskan penawaran untuk pelanggan lokal dan area Pantura dengan navigasi yang mudah dipahami. Fokus halaman diarahkan untuk kuliner, batik, travel, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Cirebon berada di jalur pantura yang dilewati jutaan kendaraan setiap musim mudik. Ini captive audience yang luar biasa besar — pemudik yang mencari tempat makan, oleh-oleh, atau penginapan untuk istirahat. Tapi hampir tidak ada bisnis Cirebon yang mengoptimasi websitenya untuk menangkap traffic musiman ini. Sekali dioptimasi, traffic gratis ini datang setiap tahun tanpa biaya iklan tambahan.',
+    localBusinessContext: 'Di Cirebon, calon pelanggan untuk kuliner, batik, travel membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Cirebon Kota', 'Kabupaten Cirebon', 'Kuningan', 'Indramayu', 'Majalengka'],
     buyerProblems: ['Bisnis sudah dikenal offline tetapi informasi online belum rapi.', 'Calon pelanggan perlu melihat produk, layanan, harga awal, atau proses sebelum bertanya.', 'Website belum menghubungkan katalog, WhatsApp, dan halaman layanan.'],
     recommendedWebsiteTypes: [
@@ -963,7 +963,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'properti', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Website untuk bisnis Sidoarjo perlu mendukung kredibilitas perusahaan, katalog layanan, dan alur konsultasi yang mudah. Fokus halaman diarahkan untuk industri, logistik, properti, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Sidoarjo sering dilihat sebagai pinggiran Surabaya, padahal ekonominya mandiri dan sangat besar — ada ratusan pabrik dan ribuan UMKM di sini. Masalahnya: di dunia digital, bayang-bayang Surabaya terlalu besar. Bisnis Sidoarjo perlu website sendiri yang menunjukkan bahwa mereka bukan sekadar alternatif murah — mereka punya kapasitas, spesialisasi, dan value yang berdiri sendiri.',
+    localBusinessContext: 'Di Sidoarjo, calon pelanggan untuk industri, logistik, properti membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Sidoarjo', 'Waru', 'Gedangan', 'Buduran', 'Porong'],
     buyerProblems: ['Kapabilitas perusahaan belum dijelaskan formal untuk calon klien B2B.', 'Katalog layanan teknis dan area kerja belum mudah dievaluasi sebelum minta penawaran.', 'Kontak procurement atau request quotation belum menjadi CTA utama.'],
     recommendedWebsiteTypes: [
@@ -1005,7 +1005,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'logistik', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Bisnis Gresik membutuhkan website formal yang siap menjadi pusat informasi untuk calon klien B2B dan procurement. Fokus halaman diarahkan untuk industri, kontraktor, logistik, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Gresik adalah kota industri — bukan kota konsumer. Di sini, website bukan alat marketing biasa, melainkan kredensial bisnis. Industrial buyer mengevaluasi calon vendor dari checklist: kapasitas, teknologi, sertifikasi, track record keselamatan, project history. Website company profile industrial harus mencerminkan semua itu — faktual, terukur, dan lengkap seperti dokumen tender yang online.',
+    localBusinessContext: 'Di Gresik, calon pelanggan untuk industri, kontraktor, logistik membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Gresik Kota', 'Manyar', 'Kebomas', 'Driyorejo', 'kawasan industri Gresik'],
     buyerProblems: ['Halaman layanan belum menjawab pertanyaan procurement atau decision maker.', 'Profil perusahaan dan bukti kerja belum tersusun menjadi alur penilaian yang mudah.', 'Calon klien perlu jalur request quotation yang jelas sebelum menghubungi tim.'],
     recommendedWebsiteTypes: [
@@ -1047,7 +1047,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'pendidikan', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Website membantu bisnis Padang memperkuat kejelasan layanan, menampilkan penawaran, dan menjangkau pelanggan lebih luas. Fokus halaman diarahkan untuk kuliner, travel, pendidikan, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Masakan Padang adalah salah satu brand kuliner terkuat di Indonesia — sudah mendunia, ada di mana-mana. Tapi ironisnya, banyak restoran Padang legendaris yang tidak punya website. Padahal brand sekuat ini bisa scale lebih jauh: franchise inquiry, catering order korporat, bahkan penjualan bumbu dan produk jadi secara online. Website adalah kunci untuk membuka potensi itu.',
+    localBusinessContext: 'Di Padang, calon pelanggan untuk kuliner, travel, pendidikan membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Padang', 'Pariaman', 'Bukittinggi', 'Payakumbuh'],
     buyerProblems: ['Calon pelanggan luar kota membutuhkan informasi area layanan dan kontak yang jelas.', 'Penawaran belum menjelaskan scope, proses, dan estimasi langkah berikutnya.', 'Website perlu menjadi rujukan resmi sebelum percakapan WhatsApp dimulai.'],
     recommendedWebsiteTypes: [
@@ -1089,7 +1089,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'pendidikan', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Website untuk bisnis Bandar Lampung perlu menghubungkan informasi layanan, proses, dan CTA yang memudahkan pelanggan bertanya. Fokus halaman diarahkan untuk perdagangan, properti, pendidikan, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Lampung adalah provinsi dengan potensi besar tapi awareness rendah. Banyak orang Jakarta cari alternatif weekend getaway atau investasi properti — tapi tidak kepikiran Lampung karena tidak ada yang muncul di Google. Website adalah cara untuk mengubah persepsi ini: menampilkan Lampung sebagai destinasi, bukan cuma tempat yang dilewati dalam perjalanan ke Sumatera.',
+    localBusinessContext: 'Di Bandar Lampung, calon pelanggan untuk perdagangan, properti, pendidikan membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Bandar Lampung', 'Teluk Betung', 'Kedaton', 'Metro', 'Pringsewu'],
     buyerProblems: ['Calon pelanggan luar kota membutuhkan informasi area layanan dan kontak yang jelas.', 'Penawaran belum menjelaskan scope, proses, dan estimasi langkah berikutnya.', 'Website perlu menjadi rujukan resmi sebelum percakapan WhatsApp dimulai.'],
     recommendedWebsiteTypes: [
@@ -1131,7 +1131,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'pendidikan', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Bisnis Pontianak membutuhkan website yang membantu calon pelanggan memahami penawaran dan menghubungi bisnis dengan cepat. Fokus halaman diarahkan untuk perdagangan, logistik, pendidikan, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Kalimantan Barat adalah salah satu provinsi terkaya secara budaya tapi paling miskin secara eksposur digital. Perpaduan budaya Melayu, Dayak, dan Tionghoa menciptakan kuliner dan kerajinan yang tidak ada duanya di Indonesia. Tapi semua ini tidak dikenal di luar Kalimantan. Website adalah jendela pertama untuk memperkenalkan kekayaan ini ke Indonesia dan dunia.',
+    localBusinessContext: 'Di Pontianak, calon pelanggan untuk perdagangan, logistik, pendidikan membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Pontianak', 'Kubu Raya', 'Mempawah', 'Singkawang'],
     buyerProblems: ['Calon pelanggan luar kota membutuhkan informasi area layanan dan kontak yang jelas.', 'Penawaran belum menjelaskan scope, proses, dan estimasi langkah berikutnya.', 'Website perlu menjadi rujukan resmi sebelum percakapan WhatsApp dimulai.'],
     recommendedWebsiteTypes: [
@@ -1173,7 +1173,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'pendidikan', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Website membantu bisnis Manado menjelaskan layanan untuk pelanggan lokal, wisatawan, dan pasar Indonesia Timur dengan CTA yang mudah ditemukan. Fokus halaman diarahkan untuk pariwisata, kuliner, pendidikan, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Bunaken, Lembeh, dan Sangihe adalah destinasi diving yang sudah punya reputasi internasional. Diver dari Eropa dan Amerika mencari spot diving ini di Google. Tapi anehnya, banyak operator diving lokal yang websitenya tidak teroptimasi — atau bahkan tidak punya website sama sekali. Padahal dengan website multilingual dan direct booking, mereka bisa memotong agen yang mengambil komisi 20-40%.',
+    localBusinessContext: 'Di Manado, calon pelanggan untuk pariwisata, kuliner, pendidikan membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Manado', 'Minahasa', 'Bitung', 'Tomohon'],
     buyerProblems: ['Galeri dan paket belum disusun menjadi alur inquiry yang jelas.', 'Calon pelanggan dari mobile sulit menemukan WhatsApp, lokasi layanan, atau FAQ booking.', 'Konten visual belum didukung struktur SEO dan tracking konversi.'],
     recommendedWebsiteTypes: [
@@ -1215,7 +1215,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'kuliner', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Bisnis Mataram dan Lombok membutuhkan website visual, mudah diakses, dan siap menerima inquiry dari pelanggan lokal maupun wisatawan. Fokus halaman diarahkan untuk hotel, travel, kuliner, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Lombok adalah destinasi yang sedang naik daun — the next Bali yang lebih tenang dan alami. Tapi infrastruktur digitalnya masih tertinggal 5-10 tahun dari Bali. Investor dan pelaku wisata yang sekarang membangun online presence di Lombok akan memetik hasil besar ketika pulau ini benar-benar mengambil alih traffic wisatawan yang mulai meninggalkan Bali yang sudah overcrowded.',
+    localBusinessContext: 'Di Mataram, calon pelanggan untuk hotel, travel, kuliner membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Mataram', 'Lombok Barat', 'Lombok Tengah', 'Senggigi', 'Mandalika'],
     buyerProblems: ['Galeri dan paket belum disusun menjadi alur inquiry yang jelas.', 'Calon pelanggan dari mobile sulit menemukan WhatsApp, lokasi layanan, atau FAQ booking.', 'Konten visual belum didukung struktur SEO dan tracking konversi.'],
     recommendedWebsiteTypes: [
@@ -1257,7 +1257,7 @@ export const websiteCityPages: WebsiteCityPage[] = [
       { audience: 'kontraktor', websiteNeed: 'landing page atau katalog yang menjelaskan pilihan layanan tanpa membuat pengunjung menebak-nebak', conversionGoal: 'membantu pengunjung memilih langkah berikutnya dengan lebih cepat' },
     ],
     introAngle: 'Website membantu bisnis dan organisasi di Jayapura menyampaikan informasi resmi, mudah diakses, dan kredibel untuk audiens yang lebih luas. Fokus halaman diarahkan untuk pendidikan, kesehatan, kontraktor, dengan penjelasan penawaran, proses kerja, dan jalur kontak yang mudah dievaluasi sebelum konsultasi.',
-    localBusinessContext: 'Papua adalah provinsi yang paling under-represented secara digital di Indonesia. Ada gap informasi yang sangat besar antara realitas Papua dan apa yang dilihat orang di internet. Website adalah kesempatan untuk menceritakan Papua dari perspektif orang Papua sendiri — produk, budaya, komunitas, dan potensi yang sesungguhnya. Ini lebih dari sekadar bisnis — ini tentang representasi dan koneksi.',
+    localBusinessContext: 'Di Jayapura, calon pelanggan untuk pendidikan, kesehatan, kontraktor membutuhkan informasi yang cepat dibaca: layanan apa yang ditawarkan, area yang dilayani, proses kerja, dan cara meminta estimasi. Karena itu halaman diarahkan ke struktur yang praktis, bukan klaim lokal yang tidak bisa diverifikasi.',
     nearbyAreas: ['Jayapura', 'Abepura', 'Sentani', 'Keerom'],
     buyerProblems: ['Informasi layanan, program, atau kontak resmi belum mudah ditemukan.', 'Audiens membutuhkan halaman yang ringan, jelas, dan mudah dibuka dari mobile.', 'Pendaftaran, permintaan informasi, atau dokumen masih perlu diarahkan ke alur online yang rapi.'],
     recommendedWebsiteTypes: [
