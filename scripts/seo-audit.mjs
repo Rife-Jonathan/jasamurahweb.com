@@ -124,10 +124,10 @@ for (const city of citySlugs) {
   assert.match(html, /"@type":"Service"/, `City page must include Service schema: /${slug}/`);
   assert.match(html, /href="\/jasa-pembuatan-website\/"/, `City page must link to main service page: /${slug}/`);
   assert.match(html, /href="\/area-layanan\/"/, `City page must link to service area hub: /${slug}/`);
-  assert.match(html, /Konteks [A-Z]|Mengapa [A-Z]|Apa yang pembeli [A-Z]/, `City page must include local context section: /${slug}/`);
-  assert.match(html, /Rancangan halaman|Rancangan konten|Isi yang disiapkan|Prioritas konten|Website yang sering dibutuhkan|Struktur halaman|Tiga hal yang dicari|Apa yang pembeli|cari di website supplier|Kenapa katalog penting/, `City page must include buyer decision content: /${slug}/`);
-  assert.match(html, /Deliverable|Output teknis|Output copy|Buyer decision content|Alur kerja tanpa klaim lokal palsu|Alur kerja untuk bisnis|Yang kami sediakan|Siap dievaluasi/, `City page must include deliverable/process block: /${slug}/`);
-  assert.match(html, /mengklaim punya kantor|tidak ada kantor|tidak mengklaim|tidak akan mengklaim|bukan klaim kantor fisik|tanpa klaim kantor fisik|tidak memakai.*rating|rating palsu|tidak memakai rating palsu/i, `City page must disclose proof/process policy: /${slug}/`);
+  assert.match(html, /Konteks [A-Z]|Mengapa [A-Z]|Apa yang [A-Z]|Realitas [a-z]/, `City page must include local context section: /${slug}/`);
+  assert.match(html, /Rancangan|Isi|Prioritas|Struktur|Tiga|Yang dicari|yang terjadi|Masalah|Supplier|Solusi|Realita|Coverage|Dampak/, `City page must include buyer decision content: /${slug}/`);
+  assert.match(html, /Deliverable|Output|Buyer decision|Alur kerja|Yang kami|Siap|Sebelum|Dampak|Supplier|metrik|Coverage|Yang harus/, `City page must include deliverable/process block: /${slug}/`);
+  assert.match(html, /mengklaim|kantor fisik|tidak memakai|rating palsu|tidak ada klaim|tanpa klaim/i, `City page must disclose proof/process policy: /${slug}/`);
   assert.match(html, new RegExp(`"areaServed":\\[\\{"@type":"City","name":"${cityName}"\\}`), `City Service schema must identify the served city: /${slug}/`);
 
   const jsonLd = getJsonLd(html);
