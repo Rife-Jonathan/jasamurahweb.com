@@ -1,9 +1,9 @@
 ---
 import { contact, services } from '@data/site';
 import { servicePath } from '@data/routes';
-import { websiteCityPages } from '@data/websiteCities';
+import { getWebsiteCityPath, priorityWebsiteCityPages } from '@data/websiteCities';
 
-const popularServiceAreas = websiteCityPages.slice(0, 6);
+const popularServiceAreas = priorityWebsiteCityPages.slice(0, 6);
 ---
 
 <footer class="border-t border-zinc-200 bg-white text-zinc-950 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white">
@@ -60,7 +60,7 @@ const popularServiceAreas = websiteCityPages.slice(0, 6);
       <p class="text-sm font-semibold">Area Layanan Populer</p>
       <ul class="mt-4 space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
         {popularServiceAreas.map((item) => (
-          <li><a class="hover:text-brand dark:hover:text-white" href={`/${item.slug}/`}>Jasa Website {item.city}</a></li>
+          <li><a class="hover:text-brand dark:hover:text-white" href={getWebsiteCityPath(item)}>Jasa Website {item.city}</a></li>
         ))}
         <li><a class="font-semibold text-brand hover:text-brand-700 dark:text-blue-300 dark:hover:text-white" href="/area-layanan/">Lihat semua area layanan</a></li>
       </ul>

@@ -2,7 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Button from '@components/Button.astro';
 import ServiceAreasSection from '@components/ServiceAreasSection.astro';
-import { websiteCityPages } from '@data/websiteCities';
+import { getWebsiteCityPath, websiteCityPages } from '@data/websiteCities';
 import { contact } from '@data/site';
 
 const siteUrl = 'https://www.jasamurahweb.com';
@@ -27,7 +27,7 @@ const itemListSchema = {
     '@type': 'ListItem',
     position: index + 1,
     name: `Jasa Pembuatan Website ${item.city}`,
-    url: `${siteUrl}/${item.slug}/`,
+    url: `${siteUrl}${getWebsiteCityPath(item)}`,
   })),
 };
 ---
@@ -47,7 +47,7 @@ const itemListSchema = {
         <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Area Layanan</p>
         <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-6xl">Jasa Pembuatan Website untuk Bisnis di Berbagai Kota</h1>
         <p class="mt-6 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-          jasamurahweb.com membantu bisnis membangun website profesional yang rapi, mobile-friendly, SEO-ready, dan siap menjadi aset digital utama. Pilih kota terdekat untuk melihat halaman layanan yang lebih relevan dengan kebutuhan pasar lokal.
+          jasamurahweb.com membantu bisnis membangun website dengan struktur halaman, CTA WhatsApp, basic SEO, dan alur konsultasi yang jelas. Pilih kota terdekat untuk melihat konteks layanan; halaman area ini menjelaskan cakupan layanan online, bukan kantor fisik di tiap kota.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button href={briefHref}>Konsultasi Website</Button>
@@ -57,8 +57,8 @@ const itemListSchema = {
       <div class="rounded-3xl border border-blue-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
         <h2 class="text-2xl font-extrabold tracking-tight text-zinc-950 dark:text-white">Kenapa ada halaman area layanan?</h2>
         <div class="mt-6 space-y-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-          <p>Setiap kota punya konteks bisnis yang berbeda. Halaman area membantu calon klien menemukan informasi jasa pembuatan website yang lebih relevan dengan kebutuhan lokal.</p>
-          <p>Struktur ini juga memudahkan navigasi dari homepage ke halaman kota tanpa menumpuk terlalu banyak link di menu utama.</p>
+          <p>Setiap kota punya konteks bisnis yang berbeda. Halaman area membantu calon klien menemukan informasi jasa pembuatan website yang lebih relevan dengan kebutuhan lokal tanpa mengklaim kantor atau tim lokal yang tidak ditampilkan.</p>
+          <p>Struktur ini juga memudahkan navigasi dari homepage ke halaman kota melalui link crawlable tanpa menumpuk terlalu banyak link di menu utama.</p>
         </div>
       </div>
     </div>
