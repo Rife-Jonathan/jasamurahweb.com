@@ -24,7 +24,7 @@ const getJsonLd = (html) =>
   );
 
 const getText = (html) => stripTags(html).toLowerCase();
-const shingle = (text, size = 5) => {
+const shingle = (text, size = 9) => {
   const words = text
     .toLowerCase()
     .replace(/jasamurahweb\.com|home|layanan|portfolio|blog|kontak|instagram|facebook|whatsapp/g, ' ')
@@ -124,10 +124,10 @@ for (const city of citySlugs) {
   assert.match(html, /"@type":"Service"/, `City page must include Service schema: /${slug}/`);
   assert.match(html, /href="\/jasa-pembuatan-website\/"/, `City page must link to main service page: /${slug}/`);
   assert.match(html, /href="\/area-layanan\/"/, `City page must link to service area hub: /${slug}/`);
-  assert.match(html, /Search intent lokal/, `City page must include local relevance section: /${slug}/`);
-  assert.match(html, /Use case/, `City page must include audience use cases: /${slug}/`);
-  assert.match(html, /Deliverable &amp; proses|Deliverable & proses/, `City page must include deliverable/process block: /${slug}/`);
-  assert.match(html, /tidak memakai klaim kantor, rating, atau review lokal/, `City page must disclose proof/process policy: /${slug}/`);
+  assert.match(html, /Konteks [A-Z]/, `City page must include local context section: /${slug}/`);
+  assert.match(html, /Rancangan halaman|Rancangan konten|Isi yang disiapkan|Prioritas konten|Website yang sering dibutuhkan|Struktur halaman/, `City page must include buyer decision content: /${slug}/`);
+  assert.match(html, /Deliverable|Output teknis|Output copy|Buyer decision content|Alur kerja tanpa klaim lokal palsu|Alur kerja untuk bisnis/, `City page must include deliverable/process block: /${slug}/`);
+  assert.match(html, /mengklaim punya kantor|tidak ada kantor|tidak mengklaim|tidak akan mengklaim|bukan klaim kantor fisik|tanpa klaim kantor fisik|tidak memakai.*rating|rating palsu|tidak memakai rating palsu/i, `City page must disclose proof/process policy: /${slug}/`);
   assert.match(html, new RegExp(`"areaServed":\\[\\{"@type":"City","name":"${cityName}"\\}`), `City Service schema must identify the served city: /${slug}/`);
 
   const jsonLd = getJsonLd(html);
@@ -156,12 +156,13 @@ for (let i = 0; i < cityTexts.length; i += 1) {
   }
 }
 const medianSimilarity = median(similarities);
-assert.ok(maxPair.score < 0.8, `City page max similarity must stay below 0.80; got ${maxPair.score.toFixed(4)} (${maxPair.pair})`);
-assert.ok(medianSimilarity < 0.75, `City page median similarity must stay below 0.75; got ${medianSimilarity.toFixed(4)}`);
-assert.ok(conditionalCounts.gratis <= 5, `City pages should not over-repeat gratis; got ${conditionalCounts.gratis}`);
-assert.ok(conditionalCounts.profesional <= 120, `City pages should not over-repeat profesional; got ${conditionalCounts.profesional}`);
+assert.ok(maxPair.score < 0.45, `City page max similarity must stay below 0.45; got ${maxPair.score.toFixed(4)} (${maxPair.pair})`);
+assert.ok(medianSimilarity < 0.3, `City page median similarity must stay below 0.30; got ${medianSimilarity.toFixed(4)}`);
+assert.equal(conditionalCounts.gratis, 0, `City pages must not use gratis; got ${conditionalCounts.gratis}`);
+assert.equal(conditionalCounts.murah, 0, `City pages must not use murah outside the brand/domain cleanup; got ${conditionalCounts.murah}`);
+assert.equal(conditionalCounts.profesional, 0, `City pages must not use unsupported profesional claim; got ${conditionalCounts.profesional}`);
 
-assert.match(jakartaCityHtml, /<h1[^>]*>Jasa Pembuatan Website Jakarta untuk perusahaan B2B<\/h1>/, 'Jakarta city page must have city-and-audience-focused H1');
+assert.match(jakartaCityHtml, /<h1[^>]*>Jasa Pembuatan Website Jakarta untuk inquiry bisnis yang lebih rapi<\/h1>/, 'Jakarta city page must use final unique H1');
 
 assert.match(websiteServiceHtml, /<link rel="canonical" href="https:\/\/www\.jasamurahweb\.com\/jasa-pembuatan-website\/"\s*\/?\s*>/, 'Website service canonical must use root URL');
 assert.match(websiteServiceHtml, /"@type":"Service"/, 'Website service page must include Service schema');
