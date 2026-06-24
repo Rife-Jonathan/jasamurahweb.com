@@ -165,49 +165,47 @@ const faqSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} is:inline />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} is:inline />
 
-  <section class="overflow-hidden bg-white dark:bg-zinc-950">
-    <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-20">
-      <div>
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Jasa Pembuatan Website Jogja</p>
-        <h1 class="mt-5 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-zinc-950 dark:text-white sm:text-5xl lg:text-6xl">
-          Jasa Pembuatan Website Jogja untuk Bisnis yang Ingin Tampil Lebih Profesional
-        </h1>
-        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-          jasamurahweb.com membantu bisnis di Jogja membangun website yang rapi, cepat, mobile-friendly, dan siap mendukung penjualan online. Kami menyusun website bukan hanya dari sisi desain, tetapi juga struktur halaman, copywriting, CTA, dan jalur konsultasi agar calon pelanggan lebih mudah memahami dan menghubungi bisnis Anda.
-        </p>
-        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Button href={briefHref}>Konsultasi Website Sekarang</Button>
-          <Button href="/services/" variant="secondary">Lihat Layanan Digital</Button>
-        </div>
-        <p class="mt-6 text-sm font-medium text-zinc-700 dark:text-zinc-400">Cocok untuk website company profile, landing page, katalog produk, toko online, dan website bisnis custom.</p>
-      </div>
-      <div class="relative flex items-center justify-center lg:justify-end">
-        <div class="absolute -inset-4 rounded-[3rem] bg-brand-50/80 dark:bg-brand-900/20 blur-2xl"></div>
-        <img
-          src="/home_visual_blue.png"
-          alt="Jasa pembuatan website profesional untuk bisnis"
-          width="800"
-          height="600"
-          loading="eager"
-          fetchpriority="high"
-          class="relative w-full max-w-2xl rounded-2xl object-contain drop-shadow-2xl shadow-blue-900/20 dark:shadow-black/50"
-          style="animation: float 6s ease-in-out infinite;"
-        />
+  <section class="relative -mt-[72px] min-h-[720px] overflow-hidden border-b border-zinc-200/70 bg-[#f8f9f8] pt-32 dark:border-white/10 dark:bg-[#071111]">
+    <div class="pointer-events-none absolute inset-0">
+      <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white via-white/85 to-transparent dark:from-[#071111] dark:via-[#071111]/85"></div>
+      <div class="absolute left-1/2 top-20 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-brand-400/[0.13] blur-3xl dark:bg-brand-400/[0.10]"></div>
+      <div class="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.04)_1px,transparent_1px)] bg-[size:118px_118px] [mask-image:linear-gradient(to_bottom,transparent_0%,black_15%,black_76%,transparent_100%)] dark:bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)]"></div>
+      <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-zinc-300 to-transparent dark:via-white/15"></div>
+    </div>
+
+    <div class="relative mx-auto flex min-h-[588px] w-full max-w-none flex-col items-center justify-center px-4 pb-20 pt-20 text-center sm:px-6 lg:px-8 lg:pt-24">
+      <a href="/blog/" class="inline-flex items-center gap-2 rounded-full border border-zinc-200/80 bg-white/82 px-3 py-1.5 text-xs font-bold text-zinc-600 shadow-[0_10px_30px_rgba(15,23,42,0.06)] backdrop-blur-xl transition hover:border-brand/40 hover:text-brand dark:border-white/10 dark:bg-white/[0.06] dark:text-zinc-300 dark:hover:text-teal-200">
+        <span class="rounded-full bg-brand-100 px-2 py-0.5 text-[10px] font-extrabold text-brand dark:bg-brand/20 dark:text-teal-100">Baru</span>
+        Lihat studi kasus terbaru kami
+        <span class="grid h-5 w-5 place-items-center rounded-full bg-zinc-100 text-zinc-700 dark:bg-white/10 dark:text-zinc-200" aria-hidden="true">›</span>
+      </a>
+
+      <h1 class="mt-7 max-w-[980px] text-[clamp(3rem,6.4vw,5.65rem)] font-extrabold leading-[1.01] tracking-[-0.055em] text-zinc-950 [text-wrap:balance] dark:text-white">
+        Solusi Website & Web App untuk Bisnis <span class="inline-block rounded-[1.25rem] bg-brand-100 px-3 text-brand shadow-[inset_0_-2px_0_rgba(15,118,110,0.12)] dark:bg-brand/20 dark:text-teal-100">Modern</span>
+      </h1>
+
+      <p class="mt-6 max-w-[620px] text-[15px] font-medium leading-7 text-zinc-600 dark:text-zinc-300 sm:text-base">
+        Kami merancang dan membangun website serta aplikasi web yang cepat, aman, dan mudah digunakan—fokus pada hasil nyata untuk bisnis Anda.
+      </p>
+
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <Button href={briefHref}>Konsultasi Gratis <span aria-hidden="true">→</span></Button>
+        <Button href="/services/" variant="secondary">Lihat Layanan</Button>
       </div>
     </div>
   </section>
 
-  <section class="border-y border-zinc-200 dark:border-zinc-800 bg-brand-50 dark:bg-zinc-900/30 py-6">
+  <section class="border-y border-zinc-200/70 bg-white/55 py-6 backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.035]">
     <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-8 gap-y-4 px-4 text-sm font-semibold text-zinc-500 sm:px-6 lg:px-8">
       {techStack.map((item) => <span class="grayscale transition hover:grayscale-0">{item}</span>)}
     </div>
   </section>
 
-  <section class="bg-white dark:bg-zinc-950 py-20">
+  <section class="premium-section">
     <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1fr] lg:px-8">
       <div>
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Website sebagai aset bisnis</p>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">Website yang bagus harus membantu bisnis dipercaya dan dihubungi.</h2>
+        <p class="premium-eyebrow">Website sebagai aset bisnis</p>
+        <h2 class="mt-4 text-3xl font-black tracking-[-0.035em] text-zinc-950 dark:text-white sm:text-4xl">Website yang bagus harus membantu bisnis dipercaya dan dihubungi.</h2>
         <p class="mt-6 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
           Banyak website terlihat selesai, tetapi belum tentu membantu bisnis mendapatkan kepercayaan. Website yang efektif harus menjelaskan layanan dengan jelas, menunjukkan bukti, mudah dibuka dari ponsel, dan mengarahkan pengunjung ke langkah berikutnya seperti WhatsApp, form konsultasi, atau pembelian.
         </p>
@@ -219,7 +217,7 @@ const faqSchema = {
           'Menjadi pusat informasi resmi untuk SEO, iklan, dan konten sosial media.',
           'Bisa dikembangkan menjadi katalog, booking, dashboard, atau aplikasi web.',
         ].map((item) => (
-          <div class="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50">
+          <div class="premium-card premium-card-hover p-5">
             <span class="grid h-8 w-8 place-items-center rounded-full bg-brand text-sm font-bold text-white">✓</span>
             <p class="mt-4 font-semibold leading-relaxed text-zinc-800 dark:text-zinc-200">{item}</p>
           </div>
@@ -228,16 +226,16 @@ const faqSchema = {
     </div>
   </section>
 
-  <section class="border-y border-zinc-200 bg-brand-50 py-20 text-zinc-950 dark:border-zinc-800 dark:bg-zinc-900/30 dark:text-white">
+  <section class="premium-band text-zinc-950 dark:text-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand dark:text-blue-300">Jenis website</p>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Jenis website yang bisa kami bantu.</h2>
+        <p class="premium-eyebrow">Jenis website</p>
+        <h2 class="mt-4 text-3xl font-black tracking-[-0.035em] sm:text-4xl">Jenis website yang bisa kami bantu.</h2>
         <p class="mt-5 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">Setiap bisnis membutuhkan struktur website yang berbeda. Kami bantu memilih format yang paling relevan dengan tujuan, budget, dan tahap pertumbuhan bisnis Anda.</p>
       </div>
       <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {websiteTypes.map((item) => (
-          <article class="rounded-xl border border-blue-100 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
+          <article class="premium-card premium-card-hover p-6">
             <h3 class="text-xl font-bold text-zinc-950 dark:text-white">{item.title}</h3>
             <p class="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{item.description}</p>
           </article>
@@ -246,11 +244,11 @@ const faqSchema = {
     </div>
   </section>
 
-  <section class="bg-white dark:bg-zinc-950 py-20">
+  <section class="premium-section">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Layanan utama</p>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">Layanan digital untuk membangun dan mengembangkan bisnis online.</h2>
+        <p class="premium-eyebrow">Layanan utama</p>
+        <h2 class="mt-4 text-3xl font-black tracking-[-0.035em] text-zinc-950 dark:text-white sm:text-4xl">Layanan digital untuk membangun dan mengembangkan bisnis online.</h2>
         <p class="mt-5 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
           Fokus utama homepage adalah jasa pembuatan website, tetapi pertumbuhan digital tidak berhenti saat website live. Karena itu, jasamurahweb.com juga menyiapkan layanan lanjutan agar website bisa terhubung dengan branding, konten, aplikasi, dan iklan digital.
         </p>
@@ -261,15 +259,15 @@ const faqSchema = {
     </div>
   </section>
 
-  <section class="bg-brand-50 dark:bg-zinc-900/30 py-20">
+  <section class="premium-band">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Kenapa memilih kami</p>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">Kenapa memilih jasamurahweb.com untuk pembuatan website bisnis?</h2>
+        <p class="premium-eyebrow">Kenapa memilih kami</p>
+        <h2 class="mt-4 text-3xl font-black tracking-[-0.035em] text-zinc-950 dark:text-white sm:text-4xl">Kenapa memilih jasamurahweb.com untuk pembuatan website bisnis?</h2>
       </div>
       <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {whyChooseItems.map((item) => (
-          <article class="rounded-xl border border-blue-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50">
+          <article class="premium-card premium-card-hover p-6">
             <h3 class="text-xl font-bold text-zinc-950 dark:text-white">{item.title}</h3>
             <p class="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{item.description}</p>
           </article>
@@ -278,16 +276,16 @@ const faqSchema = {
     </div>
   </section>
 
-  <section class="border-y border-zinc-200 bg-white py-20 text-zinc-950 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white">
+  <section class="premium-band text-zinc-950 dark:text-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand dark:text-blue-300">Cara kerja</p>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Alur kerja pembuatan website.</h2>
+        <p class="premium-eyebrow">Cara kerja</p>
+        <h2 class="mt-4 text-3xl font-black tracking-[-0.035em] sm:text-4xl">Alur kerja pembuatan website.</h2>
       </div>
       <div class="mt-10 grid gap-5 md:grid-cols-4">
         {processSteps.map((item) => (
-          <article class="border-l border-brand/40 pl-5 dark:border-blue-400/40">
-            <p class="text-sm font-bold text-brand dark:text-blue-300">{item.step}</p>
+          <article class="premium-card p-5">
+            <p class="text-sm font-black text-brand dark:text-teal-200">{item.step}</p>
             <h3 class="mt-3 text-xl font-bold dark:text-white">{item.title}</h3>
             <p class="mt-1 text-sm font-semibold text-zinc-700 dark:text-zinc-300">{item.label}</p>
             <p class="mt-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{item.description}</p>
@@ -297,20 +295,20 @@ const faqSchema = {
     </div>
   </section>
 
-  <section class="bg-white dark:bg-zinc-950 py-20">
+  <section class="premium-section">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div class="max-w-2xl">
-          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Contoh hasil kerja</p>
-          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">Contoh hasil kerja yang menghubungkan desain, teknologi, dan pertumbuhan bisnis.</h2>
+          <p class="premium-eyebrow">Contoh hasil kerja</p>
+          <h2 class="mt-4 text-3xl font-black tracking-[-0.035em] text-zinc-950 dark:text-white sm:text-4xl">Contoh hasil kerja yang menghubungkan desain, teknologi, dan pertumbuhan bisnis.</h2>
           <p class="mt-5 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">Website yang efektif tidak hanya terlihat rapi, tetapi juga membantu bisnis mendapatkan kepercayaan, lead, dan proses digital yang lebih terukur.</p>
         </div>
         <Button href={briefHref} variant="secondary">Bahas Projek Serupa</Button>
       </div>
       <div class="mt-10 grid gap-5 lg:grid-cols-3">
         {portfolio.map((item) => (
-          <article class="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 p-6 shadow-sm">
-            <div class="relative flex aspect-[16/10] items-center justify-center overflow-hidden rounded-xl bg-[linear-gradient(135deg,#0052CC_0%,#101828_100%)] p-4">
+          <article class="premium-card premium-card-hover p-6">
+            <div class="relative flex aspect-[16/10] items-center justify-center overflow-hidden rounded-[1.5rem] bg-[radial-gradient(circle_at_70%_15%,rgba(255,255,255,0.55),transparent_22%),linear-gradient(135deg,#14B8A6_0%,#101828_100%)] p-4">
               <div class="absolute inset-0 flex items-center justify-center scale-[0.55] origin-center">
                 {item.category === 'Website' && <MockupWebsite issueHighlights={[]} />}
                 {item.category === 'Aplikasi' && <MockupApp issueHighlights={[]} />}
@@ -318,7 +316,7 @@ const faqSchema = {
                 {item.category !== 'Website' && item.category !== 'Aplikasi' && item.category !== 'Iklan' && <MockupGeneric />}
               </div>
             </div>
-            <p class="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-brand">{item.category}</p>
+            <p class="mt-5 inline-flex w-fit rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand dark:bg-brand/10 dark:text-teal-200">{item.category}</p>
             <h3 class="mt-2 text-xl font-bold text-zinc-950 dark:text-white">{item.title}</h3>
             <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">{item.industry}</p>
             <p class="mt-5 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300"><strong class="text-3xl tracking-tight text-zinc-950 dark:text-white">{item.metric}</strong> {item.result}</p>
@@ -328,15 +326,15 @@ const faqSchema = {
     </div>
   </section>
 
-  <section class="bg-brand-50 dark:bg-zinc-900/30 py-20">
+  <section class="premium-band">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Cerita klien</p>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">Dipilih karena proses yang jelas dan output yang bisa dipakai tim bisnis.</h2>
+        <p class="premium-eyebrow">Cerita klien</p>
+        <h2 class="mt-4 text-3xl font-black tracking-[-0.035em] text-zinc-950 dark:text-white sm:text-4xl">Dipilih karena proses yang jelas dan output yang bisa dipakai tim bisnis.</h2>
       </div>
       <div class="mt-10 grid gap-5 md:grid-cols-3">
         {testimonials.map((item) => (
-          <figure class="rounded-xl border border-blue-100 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 p-6 shadow-sm">
+          <figure class="premium-card premium-card-hover p-6">
             <blockquote class="text-base leading-relaxed text-zinc-700 dark:text-zinc-300">"{item.quote}"</blockquote>
             <figcaption class="mt-6 flex items-center gap-3">
               <span class="grid h-11 w-11 place-items-center rounded-full bg-brand text-sm font-bold text-white">{item.name.charAt(0)}</span>
@@ -357,22 +355,22 @@ const faqSchema = {
     limit={8}
   />
 
-  <section id="pertanyaan-umum" class="bg-white dark:bg-zinc-950 py-20">
+  <section id="pertanyaan-umum" class="premium-section">
     <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1fr] lg:px-8">
       <div>
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">FAQ</p>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white sm:text-4xl">Pertanyaan umum tentang jasa pembuatan website.</h2>
+        <p class="premium-eyebrow">FAQ</p>
+        <h2 class="mt-4 text-3xl font-black tracking-[-0.035em] text-zinc-950 dark:text-white sm:text-4xl">Pertanyaan umum tentang jasa pembuatan website.</h2>
         <p class="mt-5 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">Beberapa hal yang sering ditanyakan sebelum bisnis mulai membuat website profesional.</p>
       </div>
       <FaqAccordion items={faqItems} />
     </div>
   </section>
 
-  <section class="bg-brand py-16 text-white">
-    <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-4 sm:px-6 md:flex-row md:items-center lg:px-8">
+  <section class="px-4 py-16 text-white sm:px-6 lg:px-8">
+    <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 rounded-[2rem] bg-[radial-gradient(circle_at_14%_20%,rgba(255,255,255,0.24),transparent_28%),linear-gradient(135deg,#101828_0%,#0f766e_100%)] px-6 py-10 shadow-glow md:flex-row md:items-center lg:px-10">
       <div>
         <h2 class="max-w-3xl text-3xl font-extrabold tracking-tight sm:text-5xl">Siap membuat website yang lebih profesional?</h2>
-        <p class="mt-4 max-w-2xl text-blue-100">Ceritakan kebutuhan bisnis Anda. Kami bantu susun struktur website, copywriting, desain, dan jalur konsultasi agar website menjadi aset digital yang benar-benar mendukung kredibilitas dan penjualan.</p>
+        <p class="mt-4 max-w-2xl text-teal-50/85">Ceritakan kebutuhan bisnis Anda. Kami bantu susun struktur website, copywriting, desain, dan jalur konsultasi agar website menjadi aset digital yang benar-benar mendukung kredibilitas dan penjualan.</p>
       </div>
       <Button href={briefHref} variant="light" class="shrink-0">Konsultasi Website Sekarang</Button>
     </div>

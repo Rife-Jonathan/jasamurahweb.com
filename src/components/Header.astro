@@ -4,41 +4,41 @@ import { services } from '@data/site';
 import { servicePath } from '@data/routes';
 
 const nav = [
-  { label: 'Tentang', href: '/about' },
+  { label: 'Tentang', href: '/about/' },
   { label: 'Blog', href: '/blog/' },
-  { label: 'Kontak', href: '/contact' },
+  { label: 'Kontak', href: '/contact/' },
 ];
 ---
 
-<header class="sticky top-0 z-50 border-b border-zinc-200/80 dark:border-zinc-800 bg-white/90 backdrop-blur dark:bg-zinc-950/90">
-  <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Navigasi utama">
+<header class="sticky top-0 z-50 px-3 pt-3">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/70 bg-white/[0.82] px-4 py-3 shadow-[0_18px_60px_rgba(15,23,42,0.10)] backdrop-blur-2xl dark:border-white/10 dark:bg-zinc-950/[0.78]" aria-label="Navigasi utama">
     <a href="/" class="flex items-center gap-3 font-bold tracking-tight text-zinc-950 dark:text-white" aria-label="jasamurahweb.com home">
-      <img src="/logo-jasamurabweb.png" alt="Logo jasamurahweb.com" width="160" height="30" loading="eager" decoding="async" class="h-10 w-auto rounded-xl bg-[#ffffff] p-1" />
+      <img src="/logo-jasamurabweb.png" alt="Logo jasamurahweb.com" width="160" height="30" loading="eager" decoding="async" class="h-9 w-auto rounded-full bg-white px-2 py-1" />
     </a>
 
-    <div class="hidden items-center gap-7 md:flex">
-      <a class="text-sm font-medium text-zinc-600 dark:text-zinc-400 transition hover:text-brand" href="/">Home</a>
+    <div class="hidden items-center gap-6 md:flex">
+      <a class="text-sm font-semibold text-zinc-600 transition hover:text-brand dark:text-zinc-300" href="/">Home</a>
       <div class="group relative">
-        <a class="inline-flex items-center gap-1 text-sm font-medium text-zinc-600 dark:text-zinc-400 transition hover:text-brand" href="/services/">
+        <a class="inline-flex items-center gap-1 text-sm font-semibold text-zinc-600 transition hover:text-brand dark:text-zinc-300" href="/services/">
           Layanan
           <svg aria-hidden="true" class="h-4 w-4 transition group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="m6 9 6 6 6-6"></path>
           </svg>
         </a>
         <div class="invisible absolute left-1/2 top-full w-80 -translate-x-1/2 pt-4 opacity-0 transition group-hover:visible group-hover:opacity-100">
-          <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white p-3 shadow-[0_18px_60px_rgba(0,82,204,0.16)] dark:bg-zinc-950">
-            <a class="block rounded-xl px-4 py-3 text-sm font-semibold text-zinc-950 dark:text-white hover:bg-brand-50 dark:hover:bg-zinc-900 hover:text-brand" href="/services/">Semua Layanan</a>
+          <div class="rounded-[1.5rem] border border-white/70 bg-white/[0.92] p-3 shadow-[0_24px_80px_rgba(15,23,42,0.14)] backdrop-blur-2xl dark:border-white/10 dark:bg-zinc-950/[0.95]">
+            <a class="block rounded-2xl px-4 py-3 text-sm font-bold text-zinc-950 hover:bg-brand-50 hover:text-brand dark:text-white dark:hover:bg-white/10" href="/services/">Semua Layanan</a>
             {services.map((service) => (
-              <a class="block rounded-xl px-4 py-3 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:bg-brand-50 dark:hover:bg-zinc-900 hover:text-brand" href={servicePath(service.slug)}>{service.title}</a>
+              <a class="block rounded-2xl px-4 py-3 text-sm font-semibold text-zinc-600 hover:bg-brand-50 hover:text-brand dark:text-zinc-300 dark:hover:bg-white/10" href={servicePath(service.slug)}>{service.title}</a>
             ))}
           </div>
         </div>
       </div>
       {nav.map((item) => (
-        <a class="text-sm font-medium text-zinc-600 dark:text-zinc-400 transition hover:text-brand" href={item.href}>{item.label}</a>
+        <a class="text-sm font-semibold text-zinc-600 transition hover:text-brand dark:text-zinc-300" href={item.href}>{item.label}</a>
       ))}
       <button
-        class="inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-zinc-300 dark:border-zinc-700 px-3 text-sm font-semibold text-zinc-700 dark:text-zinc-300 transition hover:border-brand hover:text-brand"
+        class="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-zinc-200 bg-white/[0.65] px-3 text-sm font-bold text-zinc-700 shadow-sm transition hover:border-brand/50 hover:text-brand dark:border-white/10 dark:bg-white/[0.06] dark:text-zinc-200"
         type="button"
         aria-label="Ganti dark mode light mode"
         data-theme-toggle
@@ -52,11 +52,11 @@ const nav = [
         </svg>
         <span data-theme-label>Light</span>
       </button>
-      <Button href="/contact" class="py-2.5">Konsultasi Gratis</Button>
+      <Button href="/contact/" class="py-2.5">Konsultasi Gratis</Button>
     </div>
 
     <button
-      class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-300 dark:border-zinc-700 text-zinc-800 dark:text-zinc-200 md:hidden"
+      class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white/70 text-zinc-800 shadow-sm md:hidden dark:border-white/10 dark:bg-white/[0.06] dark:text-zinc-200"
       type="button"
       aria-expanded="false"
       aria-controls="mobile-menu"
@@ -68,22 +68,22 @@ const nav = [
       </svg>
     </button>
   </nav>
-  <div id="mobile-menu" class="hidden border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-4 md:hidden" data-menu>
+  <div id="mobile-menu" class="mx-auto mt-2 hidden max-w-6xl rounded-[1.5rem] border border-white/70 bg-white/[0.92] px-4 py-4 shadow-premium backdrop-blur-2xl md:hidden dark:border-white/10 dark:bg-zinc-950/[0.95]" data-menu>
     <div class="flex flex-col gap-3">
-      <a class="rounded-xl px-2 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-brand-50 dark:hover:bg-zinc-900 hover:text-brand" href="/">Home</a>
-      <a class="rounded-xl px-2 py-2 text-sm font-semibold text-zinc-950 dark:text-white hover:bg-brand-50 dark:hover:bg-zinc-900 hover:text-brand" href="/services/">Layanan</a>
-      <div class="grid gap-1 border-l border-zinc-200 dark:border-zinc-800 pl-3">
+      <a class="rounded-2xl px-3 py-2 text-sm font-semibold text-zinc-700 hover:bg-brand-50 hover:text-brand dark:text-zinc-300 dark:hover:bg-white/10" href="/">Home</a>
+      <a class="rounded-2xl px-3 py-2 text-sm font-bold text-zinc-950 hover:bg-brand-50 hover:text-brand dark:text-white dark:hover:bg-white/10" href="/services/">Layanan</a>
+      <div class="grid gap-1 border-l border-zinc-200 pl-3 dark:border-white/10">
         {services.map((service) => (
-          <a class="rounded-xl px-2 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-brand-50 dark:hover:bg-zinc-900 hover:text-brand" href={servicePath(service.slug)}>{service.title}</a>
+          <a class="rounded-2xl px-3 py-2 text-sm font-semibold text-zinc-700 hover:bg-brand-50 hover:text-brand dark:text-zinc-300 dark:hover:bg-white/10" href={servicePath(service.slug)}>{service.title}</a>
         ))}
       </div>
       {nav.map((item) => (
-        <a class="rounded-xl px-2 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-brand-50 dark:hover:bg-zinc-900 hover:text-brand" href={item.href}>{item.label}</a>
+        <a class="rounded-2xl px-3 py-2 text-sm font-semibold text-zinc-700 hover:bg-brand-50 hover:text-brand dark:text-zinc-300 dark:hover:bg-white/10" href={item.href}>{item.label}</a>
       ))}
-      <button class="rounded-xl border border-zinc-300 dark:border-zinc-700 px-2 py-2 text-left text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:border-brand hover:text-brand" type="button" data-theme-toggle>
+      <button class="rounded-full border border-zinc-200 px-3 py-2 text-left text-sm font-semibold text-zinc-700 hover:border-brand/50 hover:text-brand dark:border-white/10 dark:text-zinc-300" type="button" data-theme-toggle>
         Mode: <span data-theme-label>Light</span>
       </button>
-      <Button href="/contact" class="mt-1">Konsultasi Gratis</Button>
+      <Button href="/contact/" class="mt-1">Konsultasi Gratis</Button>
     </div>
   </div>
 </header>

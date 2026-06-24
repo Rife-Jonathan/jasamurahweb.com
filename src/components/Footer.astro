@@ -6,70 +6,70 @@ import { getWebsiteCityPath, priorityWebsiteCityPages } from '@data/websiteCitie
 const popularServiceAreas = priorityWebsiteCityPages.slice(0, 6);
 ---
 
-<footer class="border-t border-zinc-200 bg-white text-zinc-950 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white">
-  <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_0.8fr_0.9fr] lg:px-8">
-    <div>
-      <a href="/" class="flex items-center gap-3 font-bold">
-        <img src="/logo-jasamurabweb.png" alt="Logo jasamurahweb.com" width="160" height="44" loading="lazy" class="h-11 w-auto rounded-xl bg-[#ffffff] p-1" />
-      </a>
-      <p class="mt-4 max-w-md text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-        Agensi digital end-to-end untuk website, aplikasi, company profile, konten sosial media, dan iklan berbasis data.
-      </p>
-      <div class="mt-5 flex items-center gap-3">
-        <a class="grid h-12 w-12 place-items-center rounded-xl border border-zinc-200 text-zinc-600 transition hover:border-brand hover:text-brand dark:border-white/10 dark:text-zinc-300 dark:hover:text-white" href={contact.instagram} aria-label="Instagram jasamurahweb.com" rel="noopener noreferrer" target="_blank">
-          <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M17.5 6.5h.01"></path>
-          </svg>
+<footer class="border-t border-zinc-200/70 bg-white/70 text-zinc-950 backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.035] dark:text-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_0.8fr_0.9fr]">
+      <div>
+        <a href="/" class="flex items-center gap-3 font-bold">
+          <img src="/logo-jasamurabweb.png" alt="Logo jasamurahweb.com" width="160" height="44" loading="lazy" class="h-11 w-auto rounded-full bg-white px-2 py-1" />
         </a>
-        <a class="grid h-12 w-12 place-items-center rounded-xl border border-zinc-200 text-zinc-600 transition hover:border-brand hover:text-brand dark:border-white/10 dark:text-zinc-300 dark:hover:text-white" href={contact.facebook} aria-label="Facebook jasamurahweb.com" rel="noopener noreferrer" target="_blank">
-          <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M14 8.5V6.75C14 6.06 14.56 5.5 15.25 5.5H17V2.25A21.2 21.2 0 0 0 14.45 2C11.92 2 10.2 3.54 10.2 6.33V8.5H7.33V12h2.87v10H14V12h2.84l.45-3.5H14Z" />
-          </svg>
-        </a>
+        <p class="mt-4 max-w-md text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+          Agensi digital end-to-end untuk website, aplikasi, company profile, konten sosial media, dan iklan berbasis data.
+        </p>
+        <div class="mt-5 flex items-center gap-3">
+          <a class="grid h-12 w-12 place-items-center rounded-full border border-zinc-200 bg-white/70 text-zinc-600 shadow-sm transition hover:border-brand/50 hover:text-brand dark:border-white/10 dark:bg-white/[0.06] dark:text-zinc-300 dark:hover:text-teal-200" href={contact.instagram} aria-label="Instagram jasamurahweb.com" rel="noopener noreferrer" target="_blank">
+            <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M17.5 6.5h.01"></path>
+            </svg>
+          </a>
+          <a class="grid h-12 w-12 place-items-center rounded-full border border-zinc-200 bg-white/70 text-zinc-600 shadow-sm transition hover:border-brand/50 hover:text-brand dark:border-white/10 dark:bg-white/[0.06] dark:text-zinc-300 dark:hover:text-teal-200" href={contact.facebook} aria-label="Facebook jasamurahweb.com" rel="noopener noreferrer" target="_blank">
+            <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14 8.5V6.75C14 6.06 14.56 5.5 15.25 5.5H17V2.25A21.2 21.2 0 0 0 14.45 2C11.92 2 10.2 3.54 10.2 6.33V8.5H7.33V12h2.87v10H14V12h2.84l.45-3.5H14Z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <p class="text-sm font-black">Layanan</p>
+        <ul class="mt-4 space-y-3 text-sm text-zinc-600 dark:text-zinc-300">
+          {services.map((service) => (
+            <li><a class="hover:text-brand dark:hover:text-teal-200" href={servicePath(service.slug)}>{service.title}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <p class="text-sm font-black">Kontak</p>
+        <ul class="mt-4 space-y-3 text-sm text-zinc-600 dark:text-zinc-300">
+          <li><a class="hover:text-brand dark:hover:text-teal-200" href={`mailto:${contact.email}`}>{contact.email}</a></li>
+          <li><a class="hover:text-brand dark:hover:text-teal-200" href={`https://wa.me/${contact.whatsappNumber}`}>WhatsApp: {contact.whatsappDisplay}</a></li>
+          <li>
+            <a
+              class="hover:text-brand dark:hover:text-teal-200"
+              href="https://maps.google.com/?q=Jl.+Candi+Gebang+permai+blok+6+no+2+Jetis,+Wedomartani,+Sleman,+Yogyakarta"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Lihat lokasi jasamurahweb.com di Google Maps"
+            >{contact.address}</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-sm font-black">Area Layanan Populer</p>
+        <ul class="mt-4 space-y-3 text-sm text-zinc-600 dark:text-zinc-300">
+          {popularServiceAreas.map((item) => (
+            <li><a class="hover:text-brand dark:hover:text-teal-200" href={getWebsiteCityPath(item)}>Jasa Website {item.city}</a></li>
+          ))}
+          <li><a class="font-bold text-brand hover:text-brand-700 dark:text-teal-200 dark:hover:text-white" href="/area-layanan/">Lihat semua area layanan</a></li>
+        </ul>
       </div>
     </div>
-    <div>
-      {/* Diubah dari H2 → p: label navigasi footer bukan section heading konten */}
-      <p class="text-sm font-semibold">Layanan</p>
-      <ul class="mt-4 space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
-        {services.map((service) => (
-          <li><a class="hover:text-brand dark:hover:text-white" href={servicePath(service.slug)}>{service.title}</a></li>
-        ))}
-      </ul>
-    </div>
-    <div>
-      {/* Diubah dari H2 → p: label navigasi footer bukan section heading konten */}
-      <p class="text-sm font-semibold">Kontak</p>
-      <ul class="mt-4 space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
-        <li><a class="hover:text-brand dark:hover:text-white" href={`mailto:${contact.email}`}>{contact.email}</a></li>
-        <li><a class="hover:text-brand dark:hover:text-white" href={`https://wa.me/${contact.whatsappNumber}`}>WhatsApp: {contact.whatsappDisplay}</a></li>
-        <li>
-          <a
-            class="hover:text-brand dark:hover:text-white"
-            href="https://maps.google.com/?q=Jl.+Candi+Gebang+permai+blok+6+no+2+Jetis,+Wedomartani,+Sleman,+Yogyakarta"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Lihat lokasi jasamurahweb.com di Google Maps"
-          >{contact.address}</a>
-        </li>
-      </ul>
-    </div>
-    <div>
-      <p class="text-sm font-semibold">Area Layanan Populer</p>
-      <ul class="mt-4 space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
-        {popularServiceAreas.map((item) => (
-          <li><a class="hover:text-brand dark:hover:text-white" href={getWebsiteCityPath(item)}>Jasa Website {item.city}</a></li>
-        ))}
-        <li><a class="font-semibold text-brand hover:text-brand-700 dark:text-blue-300 dark:hover:text-white" href="/area-layanan/">Lihat semua area layanan</a></li>
-      </ul>
-    </div>
   </div>
-  <div class="border-t border-zinc-200 px-4 py-5 text-center text-xs text-zinc-500 dark:border-zinc-800">
+  <div class="border-t border-zinc-200/70 px-4 py-5 text-center text-xs text-zinc-500 dark:border-white/10 dark:text-zinc-400">
     <span>© {new Date().getFullYear()} jasamurahweb.com. All rights reserved.</span>
     <span class="mx-2">·</span>
-    <a href="/privacy-policy/" class="hover:text-brand dark:hover:text-white transition-colors">Kebijakan Privasi</a>
+    <a href="/privacy-policy/" class="transition-colors hover:text-brand dark:hover:text-teal-200">Kebijakan Privasi</a>
   </div>
 </footer>
 

@@ -11,14 +11,14 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<div class="divide-y divide-zinc-200 dark:divide-zinc-800 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50">
+<div class="premium-card divide-y divide-zinc-200/70 overflow-hidden dark:divide-white/10">
   {items.map((item, index) => (
     <details class="group p-5" open={index === 0}>
-      <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-zinc-950 dark:text-white">
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-bold text-zinc-950 dark:text-white">
         {item.question}
-        <span class="grid h-7 w-7 shrink-0 place-items-center rounded-xl bg-brand-50 dark:bg-brand-900/20 text-brand dark:text-blue-400 transition group-open:rotate-45">+</span>
+        <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand-50 text-brand transition group-open:rotate-45 dark:bg-brand/10 dark:text-teal-200">+</span>
       </summary>
-      <p class="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{item.answer}</p>
+      <p class="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">{item.answer}</p>
     </details>
   ))}
 </div>
