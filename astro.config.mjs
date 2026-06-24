@@ -4,6 +4,6 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://www.jasamurahweb.com',
-  trailingSlash: 'always',
+  trailingSlash: 'ignore',
   integrations: [mdx(), sitemap()],
 });

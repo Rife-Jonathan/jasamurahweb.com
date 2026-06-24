@@ -109,6 +109,35 @@ body::before {
   }
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .hero-cursor-field {
+    --hero-x: 50%;
+    --hero-y: 42%;
+  }
+
+  .hero-cursor-field::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      420px circle at var(--hero-x) var(--hero-y),
+      rgba(20, 184, 166, 0.11),
+      rgba(255, 255, 255, 0.08) 24%,
+      transparent 58%
+    );
+    opacity: var(--hero-active, 0);
+    transition: opacity 220ms ease;
+  }
+
+  .hero-cursor-glow,
+  .hero-cursor-ring {
+    left: var(--hero-x);
+    top: var(--hero-y);
+    opacity: var(--hero-active, 0);
+  }
+}
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0);

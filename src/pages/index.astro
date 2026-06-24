@@ -165,8 +165,10 @@ const faqSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} is:inline />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} is:inline />
 
-  <section class="relative -mt-[72px] min-h-[720px] overflow-hidden border-b border-zinc-200/70 bg-[#f8f9f8] pt-32 dark:border-white/10 dark:bg-[#071111]">
+  <section class="hero-cursor-field relative -mt-[72px] min-h-[720px] overflow-hidden border-b border-zinc-200/70 bg-[#f8f9f8] pt-32 dark:border-white/10 dark:bg-[#071111]" data-hero-cursor>
     <div class="pointer-events-none absolute inset-0">
+      <div class="hero-cursor-glow absolute h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-400/[0.20] opacity-0 blur-3xl transition-opacity duration-300 dark:bg-brand-400/[0.14]"></div>
+      <div class="hero-cursor-ring absolute h-36 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full border border-brand-400/[0.24] opacity-0 blur-[0.5px] transition-opacity duration-300 dark:border-brand-400/[0.18]"></div>
       <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white via-white/85 to-transparent dark:from-[#071111] dark:via-[#071111]/85"></div>
       <div class="absolute left-1/2 top-20 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-brand-400/[0.13] blur-3xl dark:bg-brand-400/[0.10]"></div>
       <div class="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.04)_1px,transparent_1px)] bg-[size:118px_118px] [mask-image:linear-gradient(to_bottom,transparent_0%,black_15%,black_76%,transparent_100%)] dark:bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)]"></div>
@@ -375,4 +377,25 @@ const faqSchema = {
       <Button href={briefHref} variant="light" class="shrink-0">Konsultasi Website Sekarang</Button>
     </div>
   </section>
+
+  <script is:inline>
+    const heroCursor = document.querySelector('[data-hero-cursor]');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (heroCursor && !reduceMotion) {
+      heroCursor.addEventListener('pointermove', (event) => {
+        const rect = heroCursor.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width) * 100;
+        const y = ((event.clientY - rect.top) / rect.height) * 100;
+
+        heroCursor.style.setProperty('--hero-x', `${x}%`);
+        heroCursor.style.setProperty('--hero-y', `${y}%`);
+        heroCursor.style.setProperty('--hero-active', '1');
+      });
+
+      heroCursor.addEventListener('pointerleave', () => {
+        heroCursor.style.setProperty('--hero-active', '0');
+      });
+    }
+  </script>
 </BaseLayout>
