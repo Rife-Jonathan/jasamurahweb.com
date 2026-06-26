@@ -89,21 +89,11 @@ const serviceSchema = isServicePage
   ? {
       '@context': 'https://schema.org',
       '@type': 'Service',
+      '@id': `${pageUrl}#service`,
       name: serviceEntry.data.title,
       description: serviceEntry.data.description,
       url: pageUrl,
-      provider: {
-        '@type': 'LocalBusiness',
-        name: 'jasamurahweb.com',
-        url: siteUrl,
-        telephone: contact.whatsappDisplay,
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Sleman',
-          addressRegion: 'Yogyakarta',
-          addressCountry: 'ID',
-        },
-      },
+      provider: { '@id': `${siteUrl}/#organization` },
       areaServed: [
         { '@type': 'City', name: 'Yogyakarta' },
         { '@type': 'Country', name: 'Indonesia' },
@@ -112,24 +102,12 @@ const serviceSchema = isServicePage
   : {
       '@context': 'https://schema.org',
       '@type': 'Service',
+      '@id': `${pageUrl}#service`,
       name: `Jasa Pembuatan Website ${cityPage.city}`,
       description: pageDescription,
       url: pageUrl,
       serviceType: 'Jasa Pembuatan Website',
-      provider: {
-        '@type': 'LocalBusiness',
-        name: 'jasamurahweb.com',
-        url: siteUrl,
-        telephone: contact.whatsappDisplay,
-        email: contact.email,
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'Jl. Candi Gebang permai blok 6 no 2 Jetis, Wedomartani',
-          addressLocality: 'Sleman',
-          addressRegion: 'Yogyakarta',
-          addressCountry: 'ID',
-        },
-      },
+      provider: { '@id': `${siteUrl}/#organization` },
       areaServed: [
         { '@type': 'City', name: cityPage.city },
         { '@type': 'AdministrativeArea', name: cityPage.province },
@@ -145,6 +123,7 @@ const breadcrumbSchema = isServicePage
   ? {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
+      '@id': `${pageUrl}#breadcrumb`,
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
         { '@type': 'ListItem', position: 2, name: 'Layanan', item: `${siteUrl}${servicesIndexPath}` },
@@ -154,6 +133,7 @@ const breadcrumbSchema = isServicePage
   : {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
+      '@id': `${pageUrl}#breadcrumb`,
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
         { '@type': 'ListItem', position: 2, name: 'Jasa Pembuatan Website', item: `${siteUrl}/jasa-pembuatan-website/` },
@@ -165,6 +145,7 @@ const faqSchema = isCityPage
   ? {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
+      '@id': `${pageUrl}#faq`,
       mainEntity: cityFaqItems.map((item: any) => ({
         '@type': 'Question',
         name: item.question,

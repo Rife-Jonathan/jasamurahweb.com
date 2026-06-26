@@ -28,23 +28,60 @@ const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogIm
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': `${siteUrl}/#organization`,
   name: 'jasamurahweb.com',
   url: siteUrl,
-  logo: `${siteUrl}/logo-jasamurabweb.png`,
+  logo: {
+    '@type': 'ImageObject',
+    '@id': `${siteUrl}/#logo`,
+    url: `${siteUrl}/logo-jasamurabweb.png`,
+    width: 200,
+    height: 60,
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: contact.whatsappDisplay,
+    contactType: 'customer service',
+    availableLanguage: 'Indonesian',
+  },
   sameAs: [contact.instagram, contact.facebook],
 };
 
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': `${siteUrl}/#website`,
   name: 'jasamurahweb.com',
   url: siteUrl,
-  publisher: {
-    '@type': 'Organization',
-    name: 'jasamurahweb.com',
-    url: siteUrl,
-  },
+  publisher: { '@id': `${siteUrl}/#organization` },
   inLanguage: 'id-ID',
+};
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['LocalBusiness', 'ProfessionalService'],
+  '@id': `${siteUrl}/#localbusiness`,
+  name: 'jasamurahweb.com',
+  url: siteUrl,
+  telephone: contact.whatsappDisplay,
+  email: contact.email,
+  image: `${siteUrl}/og-image.png`,
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Jl. Candi Gebang permai blok 6 no 2 Jetis, Wedomartani',
+    addressLocality: 'Sleman',
+    addressRegion: 'Yogyakarta',
+    postalCode: '55584',
+    addressCountry: 'ID',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -7.7397,
+    longitude: 110.4269,
+  },
+  areaServed: { '@type': 'Country', name: 'Indonesia' },
+  sameAs: [contact.instagram, contact.facebook],
 };
 ---
 
@@ -67,6 +104,7 @@ const websiteSchema = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageAbsolute} />
+    <meta property="og:image:alt" content={title} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="jasamurahweb.com" />
@@ -80,14 +118,14 @@ const websiteSchema = {
 
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} is:inline />
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} is:inline />
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} is:inline />
 
-    <!-- Favicon -->
+    <!-- Favicon & PWA -->
     <link rel="icon" type="image/png" href="/icon.png" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+    <meta name="theme-color" content="#0052CC" />
 
-    <!-- Font pairing sesuai referensi: Quattrocento + Mulish/Muli + Assistant -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&family=Mulish:ital,wght@0,400..900;1,400..900&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet" />
+    <!-- Fonts self-hosted via fontsource — diimport dari global.css -->
 
     <!-- Dark mode init (inline agar tidak flicker) -->
     <script is:inline>

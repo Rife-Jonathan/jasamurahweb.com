@@ -1,3 +1,13 @@
+/* Self-hosted fonts — eliminates Google Fonts CDN latency */
+@import '@fontsource/assistant/latin-400.css';
+@import '@fontsource/assistant/latin-500.css';
+@import '@fontsource/assistant/latin-600.css';
+@import '@fontsource/assistant/latin-700.css';
+@import '@fontsource-variable/mulish/wght.css';
+@import '@fontsource-variable/mulish/wght-italic.css';
+@import '@fontsource/quattrocento/latin-400.css';
+@import '@fontsource/quattrocento/latin-700.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -63,7 +73,7 @@ body::before {
   nav,
   button,
   .font-accent {
-    font-family: "Mulish", ui-sans-serif, system-ui, sans-serif;
+    font-family: "Mulish Variable", ui-sans-serif, system-ui, sans-serif;
   }
 
   p,

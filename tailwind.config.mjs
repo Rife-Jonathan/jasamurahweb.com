@@ -20,7 +20,7 @@ export default {
       fontFamily: {
         sans: ['"Assistant"', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
         display: ['"Quattrocento"', 'Georgia', 'serif'],
-        accent: ['"Mulish"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        accent: ['"Mulish Variable"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         serif: ['"Quattrocento"', 'Georgia', 'serif'],
       },
       boxShadow: {
